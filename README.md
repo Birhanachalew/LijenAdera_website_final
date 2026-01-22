@@ -1,4 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lijenadera Tutor-Family Connector
+
+A Next.js app for matching families with qualified tutors (in-person or online). Includes animated hero CTAs, Steps & Rules overview, testimonials, and services carousel.
+
+## Key Links
+- Tutor registration form: https://forms.gle/1hZCoW3efV6GcYHU8
+- Family registration form: https://forms.gle/MoWnertcdxqs7bej6
+- Steps & Rules page: /steps-and-rules
+- How we work (home anchor): /#how-it-works
+- Contact: /contact-us
+
+## Run Locally
+```bash
+npm install
+npm run dev
+# open http://localhost:3000
+```
+
+## Project Notes
+- Main hero CTA buttons live in app/page.js.
+- Navigation bar is in app/components/MainHeader.js.
+- Steps & Rules content and animations are in app/steps-and-rules/page.js.
+- Global styles and fonts are configured via Tailwind (tailwind.config.js) and app/globals.css.
+
+## Build
+```bash
+npm run build
+npm run start
+```This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 

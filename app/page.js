@@ -52,13 +52,17 @@ export default function Home() {
 
             <div className="w-full py-5 animate-moveleft flex flex-col sm:flex-row gap-4">
               <a
-                href="/contact-us"
+                href="https://forms.gle/1hZCoW3efV6GcYHU8"
+                target="_blank"
+                rel="noreferrer"
                 className="text-white bg-gradient-to-r from-[#6675F7] to-[#57007B] px-6 py-4 md:px-8 md:py-5 rounded-lg shadow-lg shadow-[#6675F7]/40 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-[#57007B]/40 transition-transform transition-shadow duration-200 w-full text-center"
               >
                 ለአስጠኚዎች መመዝገብ
               </a>
               <a
-                href="/contact-us"
+                href="https://forms.gle/MoWnertcdxqs7bej6"
+                target="_blank"
+                rel="noreferrer"
                 className="text-white bg-gradient-to-r from-[#0d1c9f] via-[#406AFF] to-[#6AD6F0] px-6 py-4 md:px-8 md:py-5 rounded-lg shadow-lg shadow-[#406AFF]/40 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-[#0d1c9f]/40 transition-transform transition-shadow duration-200 w-full text-center"
               >
                 ለቤተሰብ መመዝገብ
