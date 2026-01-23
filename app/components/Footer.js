@@ -7,12 +7,12 @@ import {
   FaTiktok,
   FaTwitter,
 } from "react-icons/fa";
-import bellxLogo from '../../public/logo.svg'
+import bellxLogo from "../../public/logo.svg";
 import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="py-8">
+    <footer className="py-8 bg-gradient-to-r from-[#E6F7F6] to-[#E7F0FA]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8 xl:justify-around">
           {/* Column 1 */}
@@ -30,40 +30,32 @@ const Footer = () => {
             <div className="flex justify-center md:block">
             <ul className="text-sm  grid grid-cols-3 justify-between md:flex md:flex-col md:gap-y-1">
               <li>
-                <a href="/about" className=" hover:text-gray-700 hover:underline">
+                <a href="/about" className="hover:text-[#1F73B5] hover:underline">
                   About us
                 </a>
               </li>
               <li>
-                <a href="/services" className=" hover:text-gray-700 hover:underline">
+                <a href="/services" className="hover:text-[#1F73B5] hover:underline">
                   Services
                 </a>
               </li>
               <li>
-                <a href="/project" className=" hover:text-gray-700 hover:underline">
-                  Project
+                <a href="/portfolio" className="hover:text-[#1F73B5] hover:underline">
+                 Find Jobs
                 </a>
               </li>
-              <li>
-                <a href="/how-it-works" className=" hover:text-gray-700 hover:underline">
-                  How it works
-                </a>
-              </li>
+              
               <li>
                 <div className="">
                     <a
                       href="https://t.me/LijenAderaTutor"
-                      className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
+                      className="text-[#1F73B5] font-medium hover:text-opacity-70 no-underline"
                     >
                       Blog
                     </a>
                   </div>
               </li>
-              <li>
-                <a href="#services" className=" hover:text-gray-700 hover:underline">
-                  Areas we serve
-                </a>
-              </li>
+              
             </ul>
             </div>
           </div>
@@ -82,27 +74,27 @@ const Footer = () => {
 
         {/* Social media icons */}
         <div className="mt-8 flex justify-center">
-          <div className="bg-slate-200 rounded-full p-2 shadow-lg mx-2">
+          <div className="bg-[#E1F5F4] text-[#1F73B5] rounded-full p-2 shadow-lg shadow-[#149895]/25 mx-2">
             <a href="https://www.linkedin.com/in/dehninet-hulgizey-4826b1364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
               <FaLinkedinIn size={16} />
             </a>
           </div>
-          <div className="bg-slate-200 rounded-full p-2 shadow-lg mx-2">
+          <div className="bg-[#E1F5F4] text-[#1F73B5] rounded-full p-2 shadow-lg shadow-[#149895]/25 mx-2">
             <a href="https://t.me/LijenAderaTutor">
               <FaTelegram size={16} />
             </a>
           </div>
-          <div className="bg-slate-200 rounded-full p-2 shadow-lg mx-2">
+          <div className="bg-[#E1F5F4] text-[#1F73B5] rounded-full p-2 shadow-lg shadow-[#149895]/25 mx-2">
             <a href="https://www.instagram.com/lijen_adera_tutoring?igsh=MW10Z28wYTRzcmJqbA==">
               <FaInstagram size={16} />
             </a>
           </div>
-          <div className="bg-slate-200 rounded-full p-2 shadow-lg mx-2">
+          <div className="bg-[#E1F5F4] text-[#1F73B5] rounded-full p-2 shadow-lg shadow-[#149895]/25 mx-2">
             <a href="https://www.facebook.com/profile.php?id=61585879345836">
               <FaFacebookF size={16} />
             </a>
           </div>
-          <div className="bg-slate-200 rounded-full p-2 shadow-lg mx-2">
+          <div className="bg-[#E1F5F4] text-[#1F73B5] rounded-full p-2 shadow-lg shadow-[#149895]/25 mx-2">
             <a href="https://tiktok.com/@user6033223266513">
               <FaTiktok size={16} />
             </a>

@@ -1,120 +1,48 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import reactIcon from '../../public/react-icon.svg'
-import angularIcon from '../../public/angular-icon.svg'
-import vueIcon from '../../public/vue-icon.svg'
-import htmlIcon from '../../public/html-icon.svg'
-import jsIcon from '../../public/javascript-icon.svg'
-import tsIcon from '../../public/typescript-icon.png'
-import golangIcon from '../../public/golang-icon.svg'
-import nodeIcon from '../../public/node-icon.svg'
-import phpIcon from '../../public/php-icon.svg'
-import dotnetIcon from '../../public/dotnet-icon.svg'
-import pythonIcon from '../../public/python-icon.svg'
-import rubyIcon from '../../public/ruby-on-rails-icon.svg'
-import javaIcon from '../../public/java-icon.svg'
-import mongodbIcon from '../../public/mongodb-icon.svg'
-import mysqlIcon from '../../public/mysql-icon.svg'
-import postgressIcon from '../../public/postgressql-icon.png'
-import muleSoftIcon from '../../public/mulesoft-icon.png'
-import Image from 'next/image';
+import Image from "next/image";
+import React from "react";
 
-
-// Define the icons or logos for each category
-const frontendIcons = [
-  reactIcon,
-  angularIcon,
-  vueIcon,
-  htmlIcon,
-  jsIcon,
-  tsIcon
-];
-
-const backendIcons = [
-  golangIcon,
-  nodeIcon,
-  phpIcon,
-  dotnetIcon,
-  pythonIcon,
-  rubyIcon,
-  javaIcon,
-  muleSoftIcon
-];
-
-const databaseIcons = [
-  mongodbIcon,
-  mysqlIcon,
-  postgressIcon
+const schools = [
+  { name: "ዋን ፕላኔት ኢንተርናሽናል ስኩል", logo: "/one%20planet.jpg" },
+  { name: "ካምብሪጅ", logo: "/cambridge.jpg" },
+  { name: "ዳያሞንድ ስኩል", logo: "/diamondacademy.jpg" },
+  { name: "ኢንዲያን ኢንተርናሽናል ስኩል", logo: "/indian.jpg" },
+  { name: "ብሪቲሽ ኢንተርናሽናል ስኩል", logo: "/british.jpg" },
+  { name: "ሳፋሪ", logo: "/safari.jpg" },
+  { name: "ራዲካል ስኩል", logo: "/radical.jpg" },
+  { name: "ናዛሬት ስኩል", logo: "/naziret.jpg" },
+  { name: "ሳንድፎርድ ኢንተርናሽናል ስኩል", logo: "/sanford.jpg" },
+  { name: "ቅዱስ ዮሴፍ ስኩል", logo: "/kidusyosef.jpg" },
+  
 ];
 
 const Technologies = () => {
-  const [activeTab, setActiveTab] = useState('frontend');
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
-  const getIconsByCategory = () => {
-    switch (activeTab) {
-      case 'frontend':
-        return frontendIcons;
-      case 'backend':
-        return backendIcons;
-      case 'database':
-        return databaseIcons;
-      default:
-        return [];
-    }
-  };
-
-  const renderIcons = () => {
-    const icons = getIconsByCategory();
-
-    return (
-      <div className="flex flex-wrap justify-center m-6">
-        {icons.map((icon, index) => (
-         
-         <Image
-           key={index}
-           src={icon}
-           alt={`Icon ${index + 1}`}
-           className="h-24 w-24 object-contain m-2"
-         />
-        ))}
-      </div>
-    );
-  };
-
   return (
     <div className="container mx-auto my-24 p-4">
-      <div className="flex justify-center space-x-4 mb-16">
-        <button
-          className={`cursor-pointer border-none bg-transparent text-lg font-semibold ${
-            activeTab === 'frontend' ? 'bg-gradient-to-r from-[#F76680] to-[#57007B] bg-clip-text text-transparent' : ''
-          }`}
-          onClick={() => handleTabClick('frontend')}
-        >
-          Frontend
-        </button>
-        <button
-          className={`cursor-pointer border-none bg-transparent text-lg font-semibold ${
-            activeTab === 'backend' ? 'bg-gradient-to-r from-[#F76680] to-[#57007B] bg-clip-text text-transparent' : ''
-          }`}
-          onClick={() => handleTabClick('backend')}
-        >
-          Backend
-        </button>
-        <button
-          className={`cursor-pointer border-none bg-transparent text-lg font-semibold ${
-            activeTab === 'database' ? 'bg-gradient-to-r from-[#F76680] to-[#57007B] bg-clip-text text-transparent' : ''
-          }`}
-          onClick={() => handleTabClick('database')}
-        >
-          Database
-        </button>
+      <div className="flex flex-col items-center mb-8">
+        <hr className="bg-[#149895] h-1 w-16 my-3" />
+        <p className="text-2xl font-semibold text-center">የአጋር ትምህርት ቤቶች</p>
       </div>
-      {renderIcons()}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+        {schools.map((school) => (
+          <div
+            key={school.name}
+            className="w-full max-w-xs rounded-lg border border-[#CDEDEA] bg-white px-4 py-6 text-center shadow-sm shadow-[#149895]/10"
+          >
+            <div className="flex justify-center mb-4">
+              <Image
+                src={school.logo}
+                alt={school.name}
+                width={80}
+                height={80}
+                className="h-20 w-20 object-contain"
+              />
+            </div>
+            <p className="text-lg font-semibold text-[#0F172A]">{school.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

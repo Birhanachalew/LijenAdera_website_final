@@ -1,80 +1,196 @@
+
 import React from "react";
 import { LiaAngleRightSolid } from "react-icons/lia";
-import ecommerceImg from '../../public/ecommerce.jpg'
-import gymImg from '../../public/gym.jpg'
-import carImg from '../../public/car.jpg'
-import Image from "next/image";
 
-const page = () => {
+const jobs = [
+  {
+    id: "job-bole-bulbula-7",
+    title: "ሴት/ወንድ አስጠኚ (7ኛ ክፍል)",
+    location: "አዲስ አበባ ቦሌ ቡልቡላ",
+    type: "ቤት ውስጥ",
+    level: "Grade 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 3,600 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-kaliti-7",
+    title: "ሴት አስጠኚ (7ኛ ክፍል)",
+    location: "አዲስ አበባ ቃሊቲ አዲስ ሰፈር",
+    type: "ቤት ውስጥ",
+    level: "Grade 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 3,600 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-bole-bulbula-7-repeat",
+    title: "ሴት/ወንድ አስጠኚ (7ኛ ክፍል)",
+    location: "አዲስ አበባ ቦሌ ቡልቡላ",
+    type: "ቤት ውስጥ",
+    level: "Grade 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 3,600 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-gofa-9",
+    title: "ሴት አስጠኚ (9ኛ ክፍል)",
+    location: "አዲስ አበባ ጎፋ መብራት አካባቢ",
+    type: "ቤት ውስጥ",
+    level: "Grade 9",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:30 ሰዓት።",
+    rate: "ወርሃዊ 5,000 ብር",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-yeka-abado-7",
+    title: "ሴት አስጠኚ (7ኛ ክፍል)",
+    location: "አዲስ አበባ የካ አባዶ",
+    type: "ቤት ውስጥ",
+    level: "Grade 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 3,600 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-6killo-3-7",
+    title: "ሴት አስጠኚ (3ኛ እና 7ኛ ክፍል)",
+    location: "አዲስ አበባ 6 ኪ.ሜ",
+    type: "ቤት ውስጥ",
+    level: "Grade 3 & 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 2:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 7,200 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-alem-bank-9-12",
+    title: "ሴት አስጠኚ (9ኛ እና 12ኛ Natural)",
+    location: "አዲስ አበባ አለም ባንክ (ቤተል)",
+    type: "ቤት ውስጥ",
+    level: "Grade 9 & 12",
+    summary: "በሳምንት 2 ቀን፣ በቀን 1:30 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 350 ብር",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-bole-bulbula-1",
+    title: "ሴት አስጠኚ (1ኛ ክፍል)",
+    location: "አዲስ አበባ ቦሌ ቡልቡላ",
+    type: "ቤት ውስጥ",
+    level: "Grade 1",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 250 ብር (ወርሃዊ 3,000 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+  {
+    id: "job-meri-7-10",
+    title: "ሴት/ወንድ አስጠኚ (10ኛ እና 7ኛ ክፍል)",
+    location: "አዲስ አበባ መሪ",
+    type: "ቤት ውስጥ",
+    level: "Grade 7 & 10",
+    summary: "በሳምንት 3 ቀን፣ በቀን 2:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 350 ብር",
+    link: "https://t.me/DHB1221",
+  },
+  {
+    id: "job-yeka-abado-7-repeat",
+    title: "ሴት አስጠኚ (7ኛ ክፍል)",
+    location: "አዲስ አበባ የካ አባዶ",
+    type: "ቤት ውስጥ",
+    level: "Grade 7",
+    summary: "በሳምንት 3 ቀን፣ በቀን 1:00 ሰዓት፣ TikTok አካውንት የተከተለ ብቻ ይመርጣል።",
+    rate: "በስዓት 300 ብር (ወርሃዊ 3,600 ብር)",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfhp6zNifJUHgVqkJ08XqLVK5-wzthD34QLLkd0uPTqP2hlhg/viewform?usp=send_form",
+  },
+];
+
+const Page = () => {
   return (
-    <div className="w-[90%] mx-auto">
-      <div className="flex flex-col my-16">
-        <hr className="bg-pink-500 h-1 w-16 my-6" />
-        <p className="text-2xl">
-          Our recent{" "}
-          <span className="text-2xl font-semibold">Case Studies</span>
+    <div className="w-[92%] mx-auto pb-16">
+      <div className="flex flex-col my-12 text-center items-center">
+        <hr className="bg-[#149895] h-1 w-16 my-4" />
+        <p className="text-2xl font-semibold">የስራ ማስታወቂያዎች</p>
+        <p className="text-[#4A5568] max-w-3xl mt-2">
+          በልጄን አደራ ከተማሪዎች እና ወላጆች ጋር የሚጣጣሙ አስጠኚዎችን እንፈልጋለን። ዝርዝር ስራዎችን ይመልከቱ እና ያመልክቱ።
         </p>
       </div>
 
-      <div
-        id="projects"
-        className="flex  items-center bg-[#F1F2FF] justify-between  lg:pr-16 mb-8 rounded-3xl border-2"
-      >
-        <Image src={ecommerceImg} alt="ecommerce-site-image" className="w-[49%] hidden lg:block" />
-        <div className="w-full p-8 lg:p-0 lg:w-[49%]">
-          <h3 className="text-2xl mb-8 font-medium">
-            E commerce Website for Tech store
-          </h3>
-          <p className="text-[#898CA9] mb-12">
-            we bring back the joy of shopping by incorporating a classic &quot;add to
-            cart&quot; feature. As you browse through our extensive range of tech
-            products, you can easily add items to your cart with a single click.
-            The cart feature allows you to review and modify your selections
-            before proceeding to checkout, just like the traditional way of
-            shopping.
-          </p>
-          <div className="text-end">
-            <a href="#" className="text-[#57007B]">
-              Preview <LiaAngleRightSolid className="inline" />
-            </a>
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {jobs.map((job) => (
+          <div
+            key={job.id}
+            className="flex flex-col justify-between rounded-2xl border border-[#CDEDEA] bg-white p-6 shadow-sm shadow-[#149895]/10"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
+                {job.type}
+              </span>
+              <span className="text-sm text-[#4A5568]">{job.location}</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
+            <p className="text-sm text-[#4A5568] mb-3">ደረጃ: {job.level}</p>
+            <p className="text-[#2D3748] mb-2 leading-relaxed">{job.summary}</p>
+            {job.rate && (
+              <p className="text-sm font-semibold text-[#149895] mb-4">{job.rate}</p>
+            )}
+            <div className="flex justify-end">
+              <a
+                href={job.link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
+              >
+                አመልክት <LiaAngleRightSolid />
+              </a>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
 
-      <div className="flex  items-center bg-[#F0FFF7] justify-between  lg:pr-16 mb-8 rounded-3xl border-2">
-        <Image src={gymImg} alt="gym-site-image" className="w-[49%] hidden lg:block" />
-        <div className="w-full p-8 lg:p-0 lg:w-[49%]">
-          <h3 className="text-2xl mb-8 font-medium">Website for GYM center</h3>
-          <p className="text-[#898CA9] mb-12">
-            As you browse through the website, you&quot;ll find detailed information
-            about the membership options, class schedules, trainer profiles, and
-            facility feature
-          </p>
-          <div className="text-end">
-            <a href="#" className="text-[#57007B]">
-              Preview <LiaAngleRightSolid className="inline" />
-            </a>
-          </div>
+      <div className="mt-10 flex flex-col items-center gap-3 text-center">
+        <p className="text-[#2D3748] font-medium">ተጨማሪ የሥራ ማስታወቂያዎችን ለማየት እና ለጥያቄ ይገናኙ፦</p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a
+            href="https://t.me/DHB1221"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
+          >
+            Telegram: ጥያቄዎች
+          </a>
+          <a
+            href="https://t.me/LijenAderaTutor"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#1F73B5] font-semibold underline"
+          >
+            More job posts channel
+          </a>
         </div>
-      </div>
-      <div className="flex  items-center bg-[#FFF4F4] justify-between  lg:pr-16 mb-8 rounded-3xl border-2">
-        <Image src={carImg} alt="car-site-image" className="w-[49%] hidden lg:block" />
-        <div className="w-full p-8 lg:p-0 lg:w-[49%]">
-          <h3 className="text-2xl mb-8 font-medium">Website for Car Rental</h3>
-          <p className="text-[#898CA9] mb-12">
-            Booking a car with us is quick and easy. Our user-friendly website
-            allows you to browse through our diverse range of vehicles, compare
-            prices, and select the one that best suits your requirements.
-          </p>
-          <div className="text-end">
-            <a href="#" className="text-[#57007B]">
-              Preview <LiaAngleRightSolid className="inline" />
-            </a>
-          </div>
+        <a
+          href="https://t.me/LijenAderaTutor"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#149895] via-[#18BDBB] to-[#1F73B5] text-white font-semibold shadow-lg shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition transform hover:-translate-y-0.5 hover:scale-[1.02] animate-pulse"
+        >
+          More job posts channel
+        </a>
+        <div className="flex flex-wrap justify-center gap-2 text-sm text-[#4A5568]">
+          <span>Make sure you follow the pinned rules</span>
+          <span>•</span>
+          <a
+            href="https://www.tiktok.com/@user6033223266513?_t=ZM-8yTzRtZ1zpl&_r=1"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#1F73B5] underline"
+          >
+            Follow our TikTok
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

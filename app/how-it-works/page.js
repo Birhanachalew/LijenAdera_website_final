@@ -14,13 +14,15 @@ export default function HowItWorksPage() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
           <a
             href="/steps-and-rules"
-            className="text-white bg-gradient-to-r from-[#6675F7] to-[#57007B] px-6 py-3 rounded-md shadow-lg text-center"
+            className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-6 py-3 rounded-md shadow-lg shadow-[#149895]/30 text-center"
           >
             ደረጃዎችና ደንቦች ይመልከቱ
           </a>
           <a
-            href="/contact-us"
-            className="text-white bg-gradient-to-r from-[#0d1c9f] via-[#406AFF] to-[#6AD6F0] px-6 py-3 rounded-md shadow-lg text-center"
+            href="https://t.me/DHB1221"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white bg-gradient-to-r from-[#1F73B5] via-[#18BDBB] to-[#6AD6F0] px-6 py-3 rounded-md shadow-lg shadow-[#149895]/30 text-center"
           >
             ያግኙን
           </a>

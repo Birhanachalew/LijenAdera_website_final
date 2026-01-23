@@ -72,6 +72,14 @@ export default function MainHeader() {
                 >
                   <div className="">
                     <a
+                      href="/"
+                      className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
+                    >
+                      Home
+                    </a>
+                  </div>
+                  <div className="">
+                    <a
                       href="/#who-we-are"
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
@@ -106,8 +114,10 @@ export default function MainHeader() {
                 </div>
                 <div className={`mt-[-8px] lg:block ${isOpen ? "block" : "hidden"}`}>
                   <a
-                    href="/contact-us"
-                    className="text-white block text-center min-w-[120px] bg-gradient-to-r from-[#6675F7] to-[#57007B] p-2 rounded-sm"
+                    href="https://t.me/DHB1221"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white block text-center min-w-[120px] bg-gradient-to-r from-[#149895] to-[#1F73B5] p-2 rounded-sm shadow-md shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition-shadow duration-200"
                   >
                     Contact Us
                   </a>

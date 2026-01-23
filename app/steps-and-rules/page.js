@@ -29,9 +29,9 @@ export default function StepsAndRules() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="group p-6 border border-[#E7DAED] rounded-xl shadow-[0_10px_40px_-24px_rgba(0,0,0,0.35)] bg-white/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_-24px_rgba(87,0,123,0.35)]">
+            <div className="group p-6 border border-[#D4EDEA] rounded-xl shadow-[0_10px_40px_-24px_rgba(0,0,0,0.35)] bg-white/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_-24px_rgba(20,152,149,0.35)]">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-[#0f172a]">
-                <span className="h-8 w-1.5 rounded-full bg-gradient-to-b from-[#6675F7] to-[#57007B] group-hover:scale-y-110 transition" aria-hidden></span>
+                <span className="h-8 w-1.5 rounded-full bg-gradient-to-b from-[#149895] to-[#1F73B5] group-hover:scale-y-110 transition" aria-hidden></span>
                 የስራ ደረጃዎች
               </h2>
               <div className="space-y-4">
@@ -40,7 +40,7 @@ export default function StepsAndRules() {
                     key={step}
                     className="flex items-start gap-4 p-3 rounded-lg border border-transparent hover:border-[#E7DAED] transition duration-200 bg-white/60"
                   >
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-gradient-to-r from-[#6675F7] to-[#57007B] text-white font-semibold flex items-center justify-center shadow-md">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-gradient-to-r from-[#149895] to-[#1F73B5] text-white font-semibold flex items-center justify-center shadow-md">
                       {index + 1}
                     </div>
                     <p className="text-[#334155] leading-relaxed">{step}</p>
@@ -49,9 +49,9 @@ export default function StepsAndRules() {
               </div>
             </div>
 
-            <div className="group p-6 border border-[#E7DAED] rounded-xl shadow-[0_10px_40px_-24px_rgba(0,0,0,0.35)] bg-white/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_-24px_rgba(13,28,159,0.35)]">
+            <div className="group p-6 border border-[#D4EDEA] rounded-xl shadow-[0_10px_40px_-24px_rgba(0,0,0,0.35)] bg-white/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_-24px_rgba(31,115,181,0.35)]">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-[#0f172a]">
-                <span className="h-8 w-1.5 rounded-full bg-gradient-to-b from-[#0d1c9f] to-[#6AD6F0] group-hover:scale-y-110 transition" aria-hidden></span>
+                <span className="h-8 w-1.5 rounded-full bg-gradient-to-b from-[#149895] to-[#6AD6F0] group-hover:scale-y-110 transition" aria-hidden></span>
                 ደንቦች
               </h2>
               <div className="space-y-4">
@@ -60,7 +60,7 @@ export default function StepsAndRules() {
                     key={rule}
                     className="flex items-start gap-3 p-3 rounded-lg border border-transparent hover:border-[#E7DAED] transition duration-200 bg-white/60"
                   >
-                    <span className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-[#0d1c9f] via-[#406AFF] to-[#6AD6F0] shadow-sm" aria-hidden></span>
+                    <span className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-[#149895] via-[#18BDBB] to-[#1F73B5] shadow-sm" aria-hidden></span>
                     <p className="text-[#334155] leading-relaxed">{rule}</p>
                   </div>
                 ))}
@@ -68,18 +68,22 @@ export default function StepsAndRules() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <a
-              href="/#how-it-works"
-              className="text-white bg-gradient-to-r from-[#6675F7] to-[#57007B] px-6 py-3 rounded-md shadow-lg text-center transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_10px_30px_-10px_rgba(87,0,123,0.45)]"
+              href="https://forms.gle/1hZCoW3efV6GcYHU8"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-6 py-3 rounded-md shadow-lg shadow-[#149895]/30 text-center transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_10px_30px_-10px_rgba(31,115,181,0.45)] w-full sm:w-auto"
             >
-              እንዴት እንሰራ ይመልከቱ
+              ለአስጠኚዎች መመዝገብ
             </a>
             <a
-              href="/contact-us"
-              className="text-white bg-gradient-to-r from-[#0d1c9f] via-[#406AFF] to-[#6AD6F0] px-6 py-3 rounded-md shadow-lg text-center transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_10px_30px_-10px_rgba(13,28,159,0.45)]"
+              href="https://forms.gle/MoWnertcdxqs7bej6"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white bg-gradient-to-r from-[#1F73B5] via-[#18BDBB] to-[#6AD6F0] px-6 py-3 rounded-md shadow-lg shadow-[#149895]/30 text-center transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_10px_30px_-10px_rgba(31,115,181,0.45)] w-full sm:w-auto"
             >
-              ያግኙን
+              ለቤተሰብ መመዝገብ
             </a>
           </div>
         </div>
