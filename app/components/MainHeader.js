@@ -8,7 +8,7 @@ import { useLanguage } from "./LanguageProvider";
 export default function MainHeader() {
   const [isOpen, setisOpen] = useState(false);
   const handleNavClick = () => setisOpen(false);
-  const { locale, setLocale, t } = useLanguage();
+  const { locale, setLocale } = useLanguage();
 
   return (
     <nav className="w-full lg:p-0 animate-pulldown sticky top-0 bg-white z-50">
@@ -79,7 +79,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      {t("nav.home")}
+                      Home
                     </a>
                   </div>
                   <div className="">
@@ -88,7 +88,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      {t("nav.services")}
+                      Services
                     </a>
                   </div>
                   <div className="">
@@ -97,7 +97,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      {t("nav.about")}
+                      About us
                     </a>
                   </div>
                   <div className="">
@@ -106,7 +106,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      {t("nav.jobs")}
+                      Find Jobs
                     </a>
                   </div>
                 
@@ -116,13 +116,11 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      {t("nav.stepsRules")}
+                      Steps & Rules
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-[#4A5568] uppercase tracking-wide">
-                      {t("nav.language")}
-                    </span>
+                    <span className="text-xs text-[#4A5568] uppercase tracking-wide">Language</span>
                     <div className="flex items-center gap-1 rounded-full border border-[#E7DAED] bg-white px-1 py-0.5">
                       <button
                         type="button"
@@ -133,7 +131,7 @@ export default function MainHeader() {
                             : "text-[#4A5568] hover:text-[#1F73B5]"
                         }`}
                       >
-                        {t("nav.amharic")}
+                        Amharic
                       </button>
                       <button
                         type="button"
@@ -144,7 +142,7 @@ export default function MainHeader() {
                             : "text-[#4A5568] hover:text-[#1F73B5]"
                         }`}
                       >
-                        {t("nav.english")}
+                        English
                       </button>
                     </div>
                   </div>
@@ -157,7 +155,7 @@ export default function MainHeader() {
                     onClick={handleNavClick}
                     className="text-white block text-center min-w-[120px] bg-gradient-to-r from-[#149895] to-[#1F73B5] p-2 rounded-sm shadow-md shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition-shadow duration-200"
                   >
-                    {t("nav.contact")}
+                    Contact Us
                   </a>
                 </div>
               </div>
