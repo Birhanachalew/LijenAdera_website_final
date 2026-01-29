@@ -80,18 +80,18 @@ export default function MainHeader() {
                   </div>
                   <div className="">
                     <a
-                      href="/#who-we-are"
-                      className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
-                    >
-                      About us
-                    </a>
-                  </div>
-                  <div className="">
-                    <a
                       href="/#services"
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Services
+                    </a>
+                  </div>
+                  <div className="">
+                    <a
+                      href="/#about-us"
+                      className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
+                    >
+                      About us
                     </a>
                   </div>
                   <div className="">
