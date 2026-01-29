@@ -1,61 +1,8 @@
+"use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LiaAngleRightSolid } from "react-icons/lia";
-import * as cheerio from "cheerio";
-
-export const revalidate = 300;
-
-const TELEGRAM_CHANNEL = "LijenAderaTutor";
-const TELEGRAM_PUBLIC_URL = `https://t.me/s/${TELEGRAM_CHANNEL}`;
-
-const parseTelegramPosts = (html) => {
-  const $ = cheerio.load(html);
-  const posts = [];
-
-  $(".tgme_widget_message").each((_, el) => {
-    const dataPost = $(el).attr("data-post");
-    const link = dataPost
-      ? `https://t.me/${dataPost}`
-      : $(el).find("a.tgme_widget_message_date").attr("href");
-    const text = $(el).find(".tgme_widget_message_text").text().trim();
-    const dateAttr = $(el).find(".tgme_widget_message_date time").attr("datetime");
-    const postedAt = dateAttr ? new Date(dateAttr) : null;
-
-    if (!text || !link) return;
-
-    const lines = text.split("\n").map((line) => line.trim()).filter(Boolean);
-    const title = lines[0]?.slice(0, 80) || "New job post";
-    const summary = lines.slice(1).join(" ").trim() || text;
-
-    posts.push({
-      id: dataPost || link,
-      title,
-      summary,
-      link,
-      postedAt,
-    });
-  });
-
-  return posts;
-};
-
-const getTelegramJobs = async () => {
-  try {
-    const response = await fetch(TELEGRAM_PUBLIC_URL, {
-      headers: {
-        "User-Agent": "Mozilla/5.0",
-      },
-      next: { revalidate: 300 },
-    });
-
-    if (!response.ok) return [];
-
-    const html = await response.text();
-    return parseTelegramPosts(html).slice(0, 18);
-  } catch (error) {
-    return [];
-  }
-};
+import { useLanguage } from "../components/LanguageProvider";
 
 const jobs = [
   {
@@ -160,19 +107,34 @@ const jobs = [
   },
 ];
 
-const Page = async () => {
-  const telegramJobs = await getTelegramJobs();
-  const jobPosts = telegramJobs.length ? telegramJobs : jobs;
+const Page = () => {
+  const { t } = useLanguage();
+  const [jobPosts, setJobPosts] = useState(jobs);
   const now = Date.now();
+
+  useEffect(() => {
+    const loadJobs = async () => {
+      try {
+        const response = await fetch("/api/jobs");
+        if (!response.ok) return;
+        const data = await response.json();
+        if (Array.isArray(data.jobs) && data.jobs.length > 0) {
+          setJobPosts(data.jobs);
+        }
+      } catch (error) {
+        // fallback to static jobs
+      }
+    };
+
+    loadJobs();
+  }, []);
 
   return (
     <div className="w-[92%] mx-auto pb-16">
       <div className="flex flex-col my-12 text-center items-center">
         <hr className="bg-[#149895] h-1 w-16 my-4" />
-        <p className="text-2xl font-semibold">የስራ ማስታወቂያዎች</p>
-        <p className="text-[#4A5568] max-w-3xl mt-2">
-          በልጄን አደራ ከተማሪዎች እና ወላጆች ጋር የሚጣጣሙ አስጠኚዎችን እንፈልጋለን። ዝርዝር ስራዎችን ይመልከቱ እና ያመልክቱ።
-        </p>
+        <p className="text-2xl font-semibold">{t("portfolio.title")}</p>
+        <p className="text-[#4A5568] max-w-3xl mt-2">{t("portfolio.description")}</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -188,13 +150,13 @@ const Page = async () => {
                 </span>
               ) : (
                 <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
-                  Telegram
+                  {t("portfolio.tagTelegram")}
                 </span>
               )}
               <div className="flex items-center gap-2">
                 {job.postedAt && now - new Date(job.postedAt).getTime() < 24 * 60 * 60 * 1000 && (
                   <span className="text-xs font-semibold text-white bg-[#1F73B5] px-2 py-1 rounded-full">
-                    New
+                    {t("portfolio.new")}
                   </span>
                 )}
                 {job.location && <span className="text-sm text-[#4A5568]">{job.location}</span>}
@@ -202,7 +164,9 @@ const Page = async () => {
             </div>
             <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
             {job.level && (
-              <p className="text-sm text-[#4A5568] mb-3">ደረጃ: {job.level}</p>
+              <p className="text-sm text-[#4A5568] mb-3">
+                {t("portfolio.level")}: {job.level}
+              </p>
             )}
             <p className="text-[#2D3748] mb-2 leading-relaxed">{job.summary}</p>
             {job.rate && (
@@ -215,7 +179,7 @@ const Page = async () => {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
               >
-                አመልክት <LiaAngleRightSolid />
+                {t("portfolio.apply")} <LiaAngleRightSolid />
               </a>
             </div>
           </div>
@@ -223,7 +187,7 @@ const Page = async () => {
       </div>
 
       <div className="mt-10 flex flex-col items-center gap-3 text-center">
-        <p className="text-[#2D3748] font-medium">ተጨማሪ የሥራ ማስታወቂያዎችን ለማየት እና ለጥያቄ ይገናኙ፦</p>
+        <p className="text-[#2D3748] font-medium">{t("portfolio.moreTitle")}</p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="https://t.me/DHB1221"
@@ -231,7 +195,7 @@ const Page = async () => {
             rel="noreferrer"
             className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
           >
-            Telegram: ጥያቄዎች
+            {t("portfolio.telegramQuestions")}
           </a>
           <a
             href="https://t.me/LijenAderaTutor"
@@ -239,7 +203,7 @@ const Page = async () => {
             rel="noreferrer"
             className="text-[#1F73B5] font-semibold underline"
           >
-            More job posts channel
+            {t("portfolio.moreChannel")}
           </a>
         </div>
         <a
@@ -248,10 +212,10 @@ const Page = async () => {
           rel="noreferrer"
           className="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#149895] via-[#18BDBB] to-[#1F73B5] text-white font-semibold shadow-lg shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition transform hover:-translate-y-0.5 hover:scale-[1.02] animate-pulse"
         >
-          More job posts channel
+          {t("portfolio.moreChannel")}
         </a>
         <div className="flex flex-wrap justify-center gap-2 text-sm text-[#4A5568]">
-          <span>Make sure you follow the pinned rules</span>
+          <span>{t("portfolio.pinnedRules")}</span>
           <span>•</span>
           <a
             href="https://www.tiktok.com/@user6033223266513?_t=ZM-8yTzRtZ1zpl&_r=1"
@@ -259,7 +223,7 @@ const Page = async () => {
             rel="noreferrer"
             className="text-[#1F73B5] underline"
           >
-            Follow our TikTok
+            {t("portfolio.followTiktok")}
           </a>
         </div>
       </div>

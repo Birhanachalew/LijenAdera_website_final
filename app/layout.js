@@ -1,8 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import MainHeader from './components/MainHeader'
 import Footer from './components/Footer'
 import NavbarWithCTAButton from './components/MainHeader'
+import { LanguageProvider } from './components/LanguageProvider'
+import { DEFAULT_LOCALE } from './lib/i18n'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,10 +39,12 @@ export default function RootLayout({ children }) {
       
       <link rel="preload" href="/images/hero.jpg" />
       <body className={inter.className}>
-        <NavbarWithCTAButton />
-        {children}
-        <Footer />
-        </body>
+        <LanguageProvider initialLocale={DEFAULT_LOCALE}>
+          <NavbarWithCTAButton />
+          {children}
+          <Footer />
+        </LanguageProvider>
+      </body>
     </html>
   )
 }

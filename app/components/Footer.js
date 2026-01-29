@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   FaFacebookF,
@@ -9,8 +11,11 @@ import {
 } from "react-icons/fa";
 import bellxLogo from "../../public/logo.svg";
 import Image from "next/image";
+import { useLanguage } from "./LanguageProvider";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-8 bg-gradient-to-r from-[#E6F7F6] to-[#E7F0FA]">
       <div className="container mx-auto px-4">
@@ -18,30 +23,30 @@ const Footer = () => {
           {/* Column 1 */}
           <div>
             <Image src={bellxLogo} alt="Company Logo" className="w-24" />
-            <p className="text-lg mb-3">ልጀን አደራ ቤት ለ ቤት አስጠኚ አገናኚ ድርጅት</p>
-            <p className="text-sm">
-              ልጄን አደራ በእርግጠኝነት እና ባለሙያነት የትምህርት ጉዞውን ከእጅዎ ጋር ይመራል።
-            </p>
+            <p className="text-lg mb-3">{t("footer.companyName")}</p>
+            <p className="text-sm">{t("footer.description")}</p>
           </div>
 
           {/* Column 2 */}
           <div>
-            <h3 className="text-lg font-bold mb-4 flex justify-center md:block">Links</h3>
+            <h3 className="text-lg font-bold mb-4 flex justify-center md:block">
+              {t("footer.links")}
+            </h3>
             <div className="flex justify-center md:block">
             <ul className="text-sm  grid grid-cols-3 justify-between md:flex md:flex-col md:gap-y-1">
               <li>
                 <a href="/about" className="hover:text-[#1F73B5] hover:underline">
-                  About us
+                  {t("footer.about")}
                 </a>
               </li>
               <li>
                 <a href="/services" className="hover:text-[#1F73B5] hover:underline">
-                  Services
+                  {t("footer.services")}
                 </a>
               </li>
               <li>
                 <a href="/portfolio" className="hover:text-[#1F73B5] hover:underline">
-                 Find Jobs
+                 {t("footer.jobs")}
                 </a>
               </li>
               
@@ -51,7 +56,7 @@ const Footer = () => {
                       href="https://t.me/LijenAderaTutor"
                       className="text-[#1F73B5] font-medium hover:text-opacity-70 no-underline"
                     >
-                      Blog
+                      {t("footer.blog")}
                     </a>
                   </div>
               </li>
@@ -62,13 +67,9 @@ const Footer = () => {
 
           {/* Column 3 */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact us</h3>
-            <p className="text-sm mb-4 max-w-md">
-              ጥያቄ አለዎት ወይስ በአገልግሎታችን ፍላጎት አለዎት? ዛሬ ያግኙን እና ውይይትን እንጀምር።
-                እንረዳዎታለን።
-            </p>
-            <p className="text-sm">Phone: ☎️ 0988469108 |
- 0953517272</p>
+            <h3 className="text-lg font-bold mb-4">{t("footer.contact")}</h3>
+            <p className="text-sm mb-4 max-w-md">{t("footer.contactText")}</p>
+            <p className="text-sm">{t("footer.phone")}</p>
           </div>
         </div>
 
@@ -100,9 +101,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <p className="text-center mt-8">
-          © 2025 Copyright by ልጀን አደራ ቤት ለ ቤት አስጠኚ አገናኚ ድርጅት. All rights reserved.
-        </p>
+        <p className="text-center mt-8">{t("footer.copyright")}</p>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import { useLanguage } from "./LanguageProvider";
 
 const schools = [
   { name: "ዋን ፕላኔት ኢንተርናሽናል ስኩል", logo: "/one%20planet.jpg" },
@@ -18,11 +19,13 @@ const schools = [
 ];
 
 const Technologies = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="container mx-auto my-24 p-4">
       <div className="flex flex-col items-center mb-8">
         <hr className="bg-[#149895] h-1 w-16 my-3" />
-        <p className="text-2xl font-semibold text-center">የአጋር ትምህርት ቤቶች</p>
+        <p className="text-2xl font-semibold text-center">{t("home.partners.title")}</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
         {schools.map((school) => (

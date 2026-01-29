@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import bellxLogo from '../../public/logo.svg'
+import { useLanguage } from "./LanguageProvider";
 
 export default function MainHeader() {
   const [isOpen, setisOpen] = useState(false);
   const handleNavClick = () => setisOpen(false);
+  const { locale, setLocale, t } = useLanguage();
 
   return (
     <nav className="w-full lg:p-0 animate-pulldown sticky top-0 bg-white z-50">
@@ -77,7 +79,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      Home
+                      {t("nav.home")}
                     </a>
                   </div>
                   <div className="">
@@ -86,7 +88,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      Services
+                      {t("nav.services")}
                     </a>
                   </div>
                   <div className="">
@@ -95,7 +97,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      About us
+                      {t("nav.about")}
                     </a>
                   </div>
                   <div className="">
@@ -104,7 +106,7 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      Find Jobs
+                      {t("nav.jobs")}
                     </a>
                   </div>
                 
@@ -114,8 +116,37 @@ export default function MainHeader() {
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
-                      Steps & Rules
+                      {t("nav.stepsRules")}
                     </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-[#4A5568] uppercase tracking-wide">
+                      {t("nav.language")}
+                    </span>
+                    <div className="flex items-center gap-1 rounded-full border border-[#E7DAED] bg-white px-1 py-0.5">
+                      <button
+                        type="button"
+                        onClick={() => setLocale("am")}
+                        className={`px-2 py-0.5 text-xs font-semibold rounded-full transition ${
+                          locale === "am"
+                            ? "bg-[#149895] text-white"
+                            : "text-[#4A5568] hover:text-[#1F73B5]"
+                        }`}
+                      >
+                        {t("nav.amharic")}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setLocale("en")}
+                        className={`px-2 py-0.5 text-xs font-semibold rounded-full transition ${
+                          locale === "en"
+                            ? "bg-[#149895] text-white"
+                            : "text-[#4A5568] hover:text-[#1F73B5]"
+                        }`}
+                      >
+                        {t("nav.english")}
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className={`mt-[-8px] lg:block ${isOpen ? "block" : "hidden"}`}>
@@ -126,7 +157,7 @@ export default function MainHeader() {
                     onClick={handleNavClick}
                     className="text-white block text-center min-w-[120px] bg-gradient-to-r from-[#149895] to-[#1F73B5] p-2 rounded-sm shadow-md shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition-shadow duration-200"
                   >
-                    Contact Us
+                    {t("nav.contact")}
                   </a>
                 </div>
               </div>

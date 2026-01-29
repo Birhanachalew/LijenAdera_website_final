@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import FeedbackCard from "./FeedbackCard";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { useLanguage } from "./LanguageProvider";
 
 const PrevArrow = ({ onClick }) => (
   <button
@@ -31,6 +32,9 @@ const NextArrow = ({ onClick }) => (
 );
 
 export default function CardSlider() {
+  const { t } = useLanguage();
+  const serviceCards = t("home.services.cards") || [];
+  const getCard = (index, fallback) => serviceCards[index] || fallback;
  
  
   return (
@@ -39,19 +43,19 @@ export default function CardSlider() {
         <div className="w-full flex justify-center ">
         <Image src="/digital.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 font-medium text-center">1. ቤት–ለ–ቤት የአስጠኚ አገልግሎት</h3>
-        <p className="text-[#2D3748] mb-12">
-          ልጄን አደራ ከተለያዩ ዩንቨርስቲዎች የተመረቁ፣ ልምድ ያላቸው መምህራንን በቀጥታ ወደ ቤትዎ ያገናኛል። ልጆች በግል ትኩረት እንዲማሩ ያግዛል እና የትምህርት ውጤታቸውን በተግባር ያሻሽላል።
-        </p>
+        <h3 className="text-xl mb-4 font-medium text-center">
+          {getCard(0, {}).title}
+        </h3>
+        <p className="text-[#2D3748] mb-12">{getCard(0, {}).body}</p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/web.svg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 text-center font-medium">2. በመስመር ላይ (Online) የአስጠኚ አገልግሎት</h3>
-        <p className="text-[#2D3748] mb-12">
-          ለጊዜ ወይም ለርቀት ችግኝ ያላቸው ተማሪዎች በZoom፣ Google Meet እና ሌሎች ቴክኖሎጂዎች የሚሰጥ ዘመናዊ የአስጠኚ አገልግሎት ነው። ተማሪዎች ከየትም ቦታ በቀላሉ መማር ይችላሉ።
-        </p>
+        <h3 className="text-xl mb-4 text-center font-medium">
+          {getCard(1, {}).title}
+        </h3>
+        <p className="text-[#2D3748] mb-12">{getCard(1, {}).body}</p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
       
@@ -59,31 +63,27 @@ export default function CardSlider() {
         <Image src="/mobile.svg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
         <h3 className="text-xl mb-4 text-center font-medium">
-          3. የፈተና ዝግጅት እና የውጤት ማሻሻያ
+          {getCard(2, {}).title}
         </h3>
-        <p className="text-[#2D3748] mb-12">
-          ብሔራዊ ፈተና፣ ዩንቨርሲቲ መግቢያ እና የክፍል ፈተናዎችን ለመዝጋጀት የተለየ የማስተማር እቅድ እንዘጋጃለን። ደካማ የሆኑ ክፍሎችን በመለየት ተማሪውን ወደ ከፍተኛ ውጤት እንመራለን።
-        </p>
+        <p className="text-[#2D3748] mb-12">{getCard(2, {}).body}</p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/graphics.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
         <h3 className="text-xl mb-4 text-center font-medium">
-          4. የአስጠኚ መቅጠር እና ማገናኘት (For Tutors)
+          {getCard(3, {}).title}
         </h3>
-        <p className="text-[#2D3748] mb-12">
-          መምህራንና አስጠኚዎች በልጄን አደራ ስር ተመዝግበው ከተማሪዎች እና ወላጆች ጋር በቀጥታ ይገናኛሉ። የስራ እድል ይፈጥራል እና የተማሪ–አስጠኚ ግንኙነትን ያቀላጥፋል።
-        </p>
+        <p className="text-[#2D3748] mb-12">{getCard(3, {}).body}</p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/testing.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 text-center font-medium">5. ትምህርትን መሰረት ያደረጉ ማስታወቂያዎች እና ምክር</h3>
-        <p className="text-[#2D3748] mb-12">
-          የትምህርት ተቋማት፣ መምህራን እና ተዛማጅ ድርጅቶች ለሚፈልጉት ታማኝ እና ተፅዕኖ ያለው የማስታወቂያ እና የምክር አገልግሎት እንሰጣለን። መልዕክታችሁ ትክክለኛ ወደ ተጠቃሚው እንዲደርስ እንረዳለን።
-        </p>
+        <h3 className="text-xl mb-4 text-center font-medium">
+          {getCard(4, {}).title}
+        </h3>
+        <p className="text-[#2D3748] mb-12">{getCard(4, {}).body}</p>
       </div>
     </div>
   );
