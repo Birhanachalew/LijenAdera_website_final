@@ -28,6 +28,8 @@ function styleByCount(count) {
   return { ring: "ring-lime-500", text: "text-lime-700", dot: "bg-lime-500" };
 }
 
+const formatCount = (count) => `${count}+`;
+
 export default function TutorCoverageMap({ markers = defaultMarkers }) {
   // Specific places (POIs) requested
   const poiMarkers = [
@@ -90,7 +92,7 @@ export default function TutorCoverageMap({ markers = defaultMarkers }) {
               <div
                 className={`${badgeSize(m.count)} ${text} bg-white rounded-full flex items-center justify-center ${ring} ring-4 shadow-md`}
               >
-                +{m.count}
+                {formatCount(m.count)}
               </div>
               <span className="mt-1 text-[10px] sm:text-xs bg-white/90 backdrop-blur px-2 py-0.5 rounded shadow">
                 {m.am}
@@ -111,7 +113,7 @@ export default function TutorCoverageMap({ markers = defaultMarkers }) {
               <div
                 className={`h-8 w-8 text-[10px] text-white ${bg} rounded-full flex items-center justify-center ring-4 ring-white/70 shadow`}
               >
-                +{m.count}
+                {formatCount(m.count)}
               </div>
               <span className="mt-1 text-[10px] sm:text-xs bg-white/90 backdrop-blur px-2 py-0.5 rounded shadow">
                 {m.am}
@@ -145,7 +147,7 @@ export default function TutorCoverageMap({ markers = defaultMarkers }) {
                   <span className={`inline-block h-2.5 w-2.5 rounded-full ${dot}`} />
                   <span className="truncate" title={`${m.en}`}>{m.am}</span>
                 </div>
-                <span className="text-gray-700 font-medium">+{m.count}</span>
+                <span className="text-gray-700 font-medium">{formatCount(m.count)}</span>
               </div>
             );
           })}
