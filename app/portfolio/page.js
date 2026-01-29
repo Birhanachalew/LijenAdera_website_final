@@ -1,6 +1,61 @@
 
 import React from "react";
 import { LiaAngleRightSolid } from "react-icons/lia";
+import * as cheerio from "cheerio";
+
+export const revalidate = 300;
+
+const TELEGRAM_CHANNEL = "LijenAderaTutor";
+const TELEGRAM_PUBLIC_URL = `https://t.me/s/${TELEGRAM_CHANNEL}`;
+
+const parseTelegramPosts = (html) => {
+  const $ = cheerio.load(html);
+  const posts = [];
+
+  $(".tgme_widget_message").each((_, el) => {
+    const dataPost = $(el).attr("data-post");
+    const link = dataPost
+      ? `https://t.me/${dataPost}`
+      : $(el).find("a.tgme_widget_message_date").attr("href");
+    const text = $(el).find(".tgme_widget_message_text").text().trim();
+    const dateAttr = $(el).find(".tgme_widget_message_date time").attr("datetime");
+    const postedAt = dateAttr ? new Date(dateAttr) : null;
+
+    if (!text || !link) return;
+
+    const lines = text.split("\n").map((line) => line.trim()).filter(Boolean);
+    const title = lines[0]?.slice(0, 80) || "New job post";
+    const summary = lines.slice(1).join(" ").trim() || text;
+
+    posts.push({
+      id: dataPost || link,
+      title,
+      summary,
+      link,
+      postedAt,
+    });
+  });
+
+  return posts;
+};
+
+const getTelegramJobs = async () => {
+  try {
+    const response = await fetch(TELEGRAM_PUBLIC_URL, {
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+      },
+      next: { revalidate: 300 },
+    });
+
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    return parseTelegramPosts(html).slice(0, 18);
+  } catch (error) {
+    return [];
+  }
+};
 
 const jobs = [
   {
@@ -105,7 +160,11 @@ const jobs = [
   },
 ];
 
-const Page = () => {
+const Page = async () => {
+  const telegramJobs = await getTelegramJobs();
+  const jobPosts = telegramJobs.length ? telegramJobs : jobs;
+  const now = Date.now();
+
   return (
     <div className="w-[92%] mx-auto pb-16">
       <div className="flex flex-col my-12 text-center items-center">
@@ -117,19 +176,34 @@ const Page = () => {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {jobs.map((job) => (
+        {jobPosts.map((job) => (
           <div
             key={job.id}
             className="flex flex-col justify-between rounded-2xl border border-[#CDEDEA] bg-white p-6 shadow-sm shadow-[#149895]/10"
           >
             <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
-                {job.type}
-              </span>
-              <span className="text-sm text-[#4A5568]">{job.location}</span>
+              {job.type ? (
+                <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
+                  {job.type}
+                </span>
+              ) : (
+                <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
+                  Telegram
+                </span>
+              )}
+              <div className="flex items-center gap-2">
+                {job.postedAt && now - new Date(job.postedAt).getTime() < 24 * 60 * 60 * 1000 && (
+                  <span className="text-xs font-semibold text-white bg-[#1F73B5] px-2 py-1 rounded-full">
+                    New
+                  </span>
+                )}
+                {job.location && <span className="text-sm text-[#4A5568]">{job.location}</span>}
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
-            <p className="text-sm text-[#4A5568] mb-3">ደረጃ: {job.level}</p>
+            {job.level && (
+              <p className="text-sm text-[#4A5568] mb-3">ደረጃ: {job.level}</p>
+            )}
             <p className="text-[#2D3748] mb-2 leading-relaxed">{job.summary}</p>
             {job.rate && (
               <p className="text-sm font-semibold text-[#149895] mb-4">{job.rate}</p>

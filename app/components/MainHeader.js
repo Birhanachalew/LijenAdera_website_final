@@ -6,6 +6,7 @@ import bellxLogo from '../../public/logo.svg'
 
 export default function MainHeader() {
   const [isOpen, setisOpen] = useState(false);
+  const handleNavClick = () => setisOpen(false);
 
   return (
     <nav className="w-full lg:p-0 animate-pulldown sticky top-0 bg-white z-50">
@@ -73,6 +74,7 @@ export default function MainHeader() {
                   <div className="">
                     <a
                       href="/"
+                      onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Home
@@ -81,6 +83,7 @@ export default function MainHeader() {
                   <div className="">
                     <a
                       href="/#services"
+                      onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Services
@@ -89,6 +92,7 @@ export default function MainHeader() {
                   <div className="">
                     <a
                       href="/#about-us"
+                      onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       About us
@@ -97,6 +101,7 @@ export default function MainHeader() {
                   <div className="">
                     <a
                       href="/portfolio"
+                      onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Find Jobs
@@ -106,6 +111,7 @@ export default function MainHeader() {
                   <div className="">
                     <a
                       href="/steps-and-rules"
+                      onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Steps & Rules
@@ -117,6 +123,7 @@ export default function MainHeader() {
                     href="https://t.me/DHB1221"
                     target="_blank"
                     rel="noreferrer"
+                    onClick={handleNavClick}
                     className="text-white block text-center min-w-[120px] bg-gradient-to-r from-[#149895] to-[#1F73B5] p-2 rounded-sm shadow-md shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition-shadow duration-200"
                   >
                     Contact Us

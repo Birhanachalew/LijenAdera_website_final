@@ -128,23 +128,23 @@ export default function Home() {
 
             <div className="relative grid gap-6 md:grid-cols-[220px,1fr] items-center p-6 md:p-10">
               <div className="flex items-center justify-center">
-                <div className="relative h-48 w-48 rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative h-48 w-48 rounded-full overflow-hidden ring-4 ring-white/80 shadow-lg">
                   <Image
                     src="/founder.JPG"
                     alt="Founder Dehininet Huligzie"
                     fill
                     sizes="192px"
-                    className="object-cover"
+                    className="object-cover object-[50%_10%]"
                     priority
                   />
                 </div>
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wide text-[#149895] font-semibold mb-2">Founder</p>
-                <h3 className="text-2xl font-bold text-gray-900">Dehininet Huligzie</h3>
-                <p className="text-sm text-gray-600 mb-4">Biomedical Engineer · Entrepreneur</p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-2xl font-semibold text-[#149895] mb-2">Founder</p>
+                <h3 className="text-3xl font-medium mb-2">Dehininet Huligzie</h3>
+                <p className="text-[#898CA9] mb-4">Biomedical Engineer · Entrepreneur</p>
+                <p className="text-[#898CA9] leading-relaxed">
                   የልጄን አደራን በመጀመር የህክምና ቴክኖሎጂ ባለሞያነቱን እና የኢንተርፕረነርሺፕ ልምዱን በመዋጣት፣ ለተማሪዎችና ለወላጆች ታማኝ የማስተማር ግንኙነት የሚያበራ መድረክ ፈጥሯል። የጥራት አስጠኚዎችን በቀጥታ እንዲያገኙ ይረዳል እና የተማሪ ውጤትን በመጠንቀቅ ተፅዕኖ ያመጣል።
                 </p>
                 <a href="/founder" className="inline-block mt-4 text-[#1F73B5] hover:underline">Learn more →</a>
