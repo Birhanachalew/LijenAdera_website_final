@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import FeedbackCard from "./FeedbackCard";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { useLanguage } from "./LanguageProvider";
 
 const PrevArrow = ({ onClick }) => (
   <button
@@ -32,10 +31,6 @@ const NextArrow = ({ onClick }) => (
 );
 
 export default function CardSlider() {
-  const { t } = useLanguage();
-  const serviceCards = t("home.services.cards") || [];
-  const getCard = (index, fallback) => serviceCards[index] || fallback;
- 
  
   return (
     <div className="flex w-full flex-wrap justify-center">
@@ -43,19 +38,21 @@ export default function CardSlider() {
         <div className="w-full flex justify-center ">
         <Image src="/digital.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 font-medium text-center">
-          {getCard(0, {}).title}
-        </h3>
-        <p className="text-[#2D3748] mb-12">{getCard(0, {}).body}</p>
+        <h3 className="text-xl mb-4 font-medium text-center">1. ቤት–ለ–ቤት የማስጠናት አገልግሎት</h3>
+        <p className="text-[#2D3748] mb-12">
+          ልጄን አደራ አስጠኚ አገናኚ ድርጅት በተለያዩ ዩንቨርሲቲዎች የተመረቁ እና ልምድ ያላቸው መምህራንን በቀጥታ ወደ ቤትዎ 
+          ይልካል ። ልጆች በትኩረት እንዲማሩ ያግዛል እና የትምህርት ውጤታቸውን በተግባር ያሻሽላል።
+        </p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/web.svg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 text-center font-medium">
-          {getCard(1, {}).title}
-        </h3>
-        <p className="text-[#2D3748] mb-12">{getCard(1, {}).body}</p>
+        <h3 className="text-xl mb-4 text-center font-medium">2.(Online) የማስጠናት አገልግሎት</h3>
+        <p className="text-[#2D3748] mb-12">
+          በ(Online) ማጥናት ለሚፈልጉ ተማሪዎች በZoom፣ Google Meet እና በሌሎች ቴክኖሎጂዎች የሚሰጥ ዘመናዊ የአስጠኚ አገልግሎት ነው። 
+          ተማሪዎች ከየትም ቦታ በቀላሉ መማር ይችላሉ።
+        </p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
       
@@ -63,85 +60,38 @@ export default function CardSlider() {
         <Image src="/mobile.svg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
         <h3 className="text-xl mb-4 text-center font-medium">
-          {getCard(2, {}).title}
+          3. የፈተና ዝግጅት እና የውጤት ማሻሻያ
         </h3>
-        <p className="text-[#2D3748] mb-12">{getCard(2, {}).body}</p>
+        <p className="text-[#2D3748] mb-12">
+          ብሔራዊ ፈተና፣ ዩንቨርሲቲ መግቢያ እና የክፍል ፈተናዎችን ለመዝጋጀት የተለየ የማስተማር እቅድ እንዘጋጃለን።
+           የደከሙበትን የትምህርት አይነቶች በመለየት ተማሪዎችን ወደ ከፍተኛ ውጤት እንመራለን።
+        </p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/graphics.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
         <h3 className="text-xl mb-4 text-center font-medium">
-          {getCard(3, {}).title}
+          4. አስጠኚ መቅጠር እና ማገናኘት (For Tutors)
         </h3>
-        <p className="text-[#2D3748] mb-12">{getCard(3, {}).body}</p>
+        <p className="text-[#2D3748] mb-12">
+          ተጠያቂ አስተማሪ ላኩልን፤ ልጃችን ውጤቱን እንዲያሻሽል በጣም አግዟል።
+        </p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
         <div className="w-full flex justify-center ">
         <Image src="/testing.jpg" width={55} height={34} className="mb-4 flex justify-center" alt="" />
         </div>
-        <h3 className="text-xl mb-4 text-center font-medium">
-          {getCard(4, {}).title}
-        </h3>
-        <p className="text-[#2D3748] mb-12">{getCard(4, {}).body}</p>
+        <h3 className="text-xl mb-4 text-center font-medium">5.የስራ ማስታወቂያ አገልግሎት </h3>
+        <p className="text-[#2D3748] mb-12">
+           ድርጅቶች ለሚፈልጉት ታማኝነት ያለው የማስታወቂያ አገልግሎት እንሰጣለን። 
+          መልዕክታችሁ በትክክል ወደ ተጠቃሚው እንዲደርስ እንረዳለን።
+        </p>
       </div>
     </div>
   );
 }
 
-
-export function Testimonials() {
-  const settings = {
-    arrows: true,
-    dots: true,
-    infinite: true,
-    speed: 350,
-    autoplay: true,
-    autoplaySpeed: 1200,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    className: "text-center",
-  };
-
-  const feedback = [
-    {
-      id: "feedback-1",
-      content:
-        "By leveraging BellX's services, I have been able to establish a strong and compelling online presence. They have designed and developed a modern and user-friendly website that effectively showcases my tech products and engages my target audience. The website's intuitive navigation, visually appealing design, and seamless user experience have contributed to attracting more visitors and converting them into customers",
-      name: "Kalkidan",
-      title: "Owner of shop.org tech stor",
-    },
-    {
-      id: "feedback-2",
-      content:
-        "Bellx software solution's team comprises highly skilled software engineers and developers with extensive expertise in various programming languages, frameworks, and technologies. ",
-      name: "Daniel",
-      title: "Software engineer",
-    },
-    {
-      id: "feedback-3",
-      content:
-        "BellX is a highly supportive software development company that has played a crucial role in helping numerous clients establish a strong online presence through their expertly designed and developed websites. With their extensive experience and dedication to client success, BellX has proven to be a reliable partner in addressing the unique needs of businesses across various industries.",
-      name: "Zelalem",
-      title: "Running Car rental bussines",
-    },
-    {
-      id: "feedback-4",
-      content:
-        "My gym members can easily access their workout routines and I can fulfill my commitment to ensuring their safety. BellX has provided a seamless solution that allows my gym members to conveniently access their personalized workout plans, track their progress, and stay motivated to achieve their fitness goals.",
-      name: "kaleb",
-      title: "GYM center owner",
-    },
-  ];
-
-  return (
-    <Slider {...settings}>
-      {feedback.map((card) => (
-        <FeedbackCard key={card.id} {...card} />
-      ))}
-    </Slider>
-  );
-}
 
 export function TestimonialsParents() {
   const settings = {
@@ -160,31 +110,32 @@ export function TestimonialsParents() {
     {
       id: "parent-1",
       content:
-        "ልጄ በስነ-ሂሳብ እድገት አስቸጋሪ ነበር፤ ከልጄን አደራ ጋር ከሰራን በኋላ በግል ትኩረት ውጤቱ በአንድ ሳምንት ግምገማ ዘጠኝ ነጥብ ተጨምሯል።",
+        "ልጄ በተለያዩ ትምህርቶች ዝቅተኛ ውጤት ነበረዉ፤ ከልጄን አደራ ጋር ከሰራን በኋላ ውጤቱ በአጭር ጊዜ ውስጥ ተሻሽሏል።",
       name: "ራሔል",
       title: "ወላጅ",
     },
     {
       id: "parent-2",
       content:
-        "የእኛ አስተማሪ ትምህርቱን በቴክኖሎጂ እና በቀለል ሞዴል ይዘምራል፤ ልጄ በመጀመሪያ የሙሉ ደረጃ ውጤት አግኝቶታል።",
-      name: "ዳዊት",
+        "ልጄን አደራዎች በጣም አመሰግናለው በጣም ጥሩ ሰው ነው ያገኘሑት ከልጄ ጋርም በደንብ ተግባብተውል እግዚአብሔር ይስጥልኝ ።",
+      name: "ሳምራዊት",
       title: "ወላጅ",
     },
     {
       id: "parent-3",
       content:
-        "ልጄ እስከዚያ ድረስ ከመምህሩ ጋር በጣም ጥሩ ግንኙነት አገኘ፤ ቤት-ትምህርት ቀናት እና ኦንላይን ክፍሎች በአንድ መስመር ተቀናጀ፣ የመማር መዋቅሩ ልዩ ተስማሚ ሆኗል።",
-      name: "እጽህዮት",
+        "በጣም ደስተኛ ነን፤ የላኩልን አስተማሪ በጣም ሀላፊነት ያላት እና ትሁት የመልካም ስነ-ምግባር ባለቤት ናት፣ ስለዚህ በኔ በኩል አመሰግናለሁ።",
+      name: "ድንቅነሽ",
       title: "ወላጅ",
     },
     {
       id: "parent-4",
       content:
-        "በአስጠኚው ተቋማችሁ ግንዛቤ እና ዘመናዊ ትምህርት መድረክ ልጄ በሳይንስና ቋንቋ አዲስ ፍላጎት አግኝቶታል፤ በሁለት ወራት ውስጥ ከክፍል መጀመሪያ 10% ውስጥ ገብቷል።",
+        "እናመሰግናለን ልጄን አደራዎች : ለልጄ እጅግ ጥሩ አስጠኚ አግኝተናል፤ የልጄ የክፍል ውጤት በጥሩ ሁኔታ ተሻሽሏል።",
       name: "ሰሎሞን",
       title: "ወላጅ",
     },
+    
   ];
 
   return (
@@ -227,14 +178,14 @@ export function TestimonialsTutors() {
     {
       id: "tutor-3",
       content:
-        "ሰላም ተና ይስጥልኝ። ድርጅታችን ልጄን አደራ አስተኚ ቡድን በጣም አሪፍ አፈጻጸም ያለው እና ምርት ቤተሰብ ያለው ድርጅት ነው፣ ስለዚህ በዚህ ቀጥል።",
+        "ሰላም ጤና ይስጥልኝ። ድርጅታችን ልጄን አደራ አስጠኚ ቡድን በጣም አሪፍ አፈጻጸም ያለው እና ምርጥ ቤተሰብ ያለው ድርጅት ነው፣ ስለዚህ በዚህ ቀጥሉ።",
       name: "በላይሁን",
       title: "አስጠኚ",
     },
     {
       id: "tutor-4",
       content:
-        "ልጄን አደራ ጋር መስራት በጣም ጥሩ ልምድ ነበር። ቡድናቸው የሚያግዙ እና አስተማሪዎችን ከተማሪዎች ጋር በትክክል ማዛመድ ያውቃሉ። የሙያ ስርዓታቸው በማኅበራዊ ትምህርት ላይ ሙሉ ትኩረት እንድሰጥ ያደርገኛል፣ በጣም አስተዋይ ነው።",
+        "ልጄን አደራ ጋር መስራት በጣም ጥሩ ልምድ አግኝቻለዉ። ቡድናቸው የሚያግዙ እና አስተማሪዎችን ከተማሪዎች ጋር በትክክል ማዛመድ ያውቃሉ። የሙያ ስርዓታቸው በማኅበራዊ ትምህርት ላይ ሙሉ ትኩረት እንድሰጥ እረድተዉኛል።",
       name: "ኤደን",
       title: "አስጠኚ",
     },

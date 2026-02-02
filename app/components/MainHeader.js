@@ -2,26 +2,25 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import bellxLogo from '../../public/logo.svg'
-import { useLanguage } from "./LanguageProvider";
+import Link from "next/link";
+import bellxLogo from "../../public/logo.svg";
 
 export default function MainHeader() {
   const [isOpen, setisOpen] = useState(false);
   const handleNavClick = () => setisOpen(false);
-  const { locale, setLocale } = useLanguage();
 
   return (
     <nav className="w-full lg:p-0 animate-pulldown sticky top-0 bg-white z-50">
       <div className=" px-4 mx-auto lg:h-24 lg:items-center lg:flex lg:justify-between lg:px-8">
         <div>
           <div className="flex items-center justify-between py-3 lg:block">
-            <a href="/">
+            <Link href="/" onClick={handleNavClick}>
               <Image
                 src={bellxLogo}
                 alt="Logo"
                 className="w-[60px] h-[60px]  sm:w-[100px] sm:h-[100px]"
               />
-            </a>
+            </Link>
             <div className="lg:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -74,13 +73,13 @@ export default function MainHeader() {
                   }`}
                 >
                   <div className="">
-                    <a
+                    <Link
                       href="/"
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Home
-                    </a>
+                    </Link>
                   </div>
                   <div className="">
                     <a
@@ -101,50 +100,23 @@ export default function MainHeader() {
                     </a>
                   </div>
                   <div className="">
-                    <a
+                    <Link
                       href="/portfolio"
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Find Jobs
-                    </a>
+                    </Link>
                   </div>
                 
                   <div className="">
-                    <a
+                    <Link
                       href="/steps-and-rules"
                       onClick={handleNavClick}
                       className="text-[#4A5568] font-medium hover:text-opacity-70 no-underline"
                     >
                       Steps & Rules
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-[#4A5568] uppercase tracking-wide">Language</span>
-                    <div className="flex items-center gap-1 rounded-full border border-[#E7DAED] bg-white px-1 py-0.5">
-                      <button
-                        type="button"
-                        onClick={() => setLocale("am")}
-                        className={`px-2 py-0.5 text-xs font-semibold rounded-full transition ${
-                          locale === "am"
-                            ? "bg-[#149895] text-white"
-                            : "text-[#4A5568] hover:text-[#1F73B5]"
-                        }`}
-                      >
-                        Amharic
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setLocale("en")}
-                        className={`px-2 py-0.5 text-xs font-semibold rounded-full transition ${
-                          locale === "en"
-                            ? "bg-[#149895] text-white"
-                            : "text-[#4A5568] hover:text-[#1F73B5]"
-                        }`}
-                      >
-                        English
-                      </button>
-                    </div>
+                    </Link>
                   </div>
                 </div>
                 <div className={`mt-[-8px] lg:block ${isOpen ? "block" : "hidden"}`}>

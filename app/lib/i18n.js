@@ -92,6 +92,100 @@ export const dictionaries = {
         parentsSubtitle: "Parents' Testimonials",
         tutorsTitle: "የአስጠኚዎች ምስክር",
         tutorsSubtitle: "Tutors' Testimonials",
+        parents: {
+          items: [
+            {
+              id: "parent-1",
+              content:
+                "ልጄ በተለያዩ ትምህርቶች ዝቅተኛ ውጤት ነበረዉ፤ ከልጄን አደራ ጋር ከሰራን በኋላ ውጤቱ በአጭር ጊዜ ውስጥ ተሻሽሏል።",
+              name: "ራሔል",
+              title: "ወላጅ",
+            },
+            {
+              id: "parent-2",
+              content:
+                "ልጄን አደራዎች በጣም አመሰግናለው በጣም ጥሩ ሰው ነው ያገኘሑት ከልጄ ጋርም በደንብ ተግባብተውል እግዚአብሔር ይስጥልኝ።",
+              name: "ሳምራዊት",
+              title: "ወላጅ",
+            },
+            {
+              id: "parent-3",
+              content:
+                "በጣም ደስተኛ ነን፤ የላኩልን አስተማሪ በጣም ሀላፊነት ያላት እና ትሁት የመልካም ስነ-ምግባር ባለቤት ናት፣ ስለዚህ በኔ በኩል አመሰግናለሁ።",
+              name: "ድንቅነሽ",
+              title: "ወላጅ",
+            },
+            {
+              id: "parent-4",
+              content:
+                "እናመሰግናለን ልጄን አደራዎች፤ ለልጄ እጅግ ጥሩ አስጠኚ አግኝተናል፤ የልጄ የክፍል ውጤት በጥሩ ሁኔታ ተሻሽሏል።",
+              name: "ሰሎሞን",
+              title: "ወላጅ",
+            },
+          ],
+        },
+        tutors: {
+          items: [
+            {
+              id: "tutor-1",
+              content:
+                "የልጄን አደራ ድርጅትን ለታማኝነታቸው በጣም ማመስገን እፈልጋለሁ። ከወላጅ ጋር መስማማት ባለመቻላችን ሥራው ሳይሳካ ቢቀርም፣ ኤጀንሲው የከፈልኩትን ኮሚሽን በሙሉ በታማኝነት መልሶልኛል።",
+              name: "ታየኝት",
+              title: "አስጠኚ",
+            },
+            {
+              id: "tutor-2",
+              content:
+                "Lijen Adera Astegni ታማኝ እና የሚደግፍ የአስጠኚ ኤጀንሲ ነው። ግንኙነታቸው ግልፅ ነው እና አስጠኚዎችን እንደ ቤተሰብ ይከብራሉ።",
+              name: "ነጻነት",
+              title: "አስጠኚ",
+            },
+            {
+              id: "tutor-3",
+              content:
+                "ሰላም ጤና ይስጥልኝ። ድርጅታችን ልጄን አደራ አስጠኚ ቡድን በጣም አሪፍ አፈጻጸም ያለው እና ምርጥ ቤተሰብ ያለው ድርጅት ነው፣ ስለዚህ በዚህ ቀጥሉ።",
+              name: "በላይሁን",
+              title: "አስጠኚ",
+            },
+            {
+              id: "tutor-4",
+              content:
+                "ልጄን አደራ ጋር መስራት በጣም ጥሩ ልምድ አግኝቻለዉ። ቡድናቸው የሚያግዙ እና አስተማሪዎችን ከተማሪዎች ጋር በትክክል ማዛመድ ያውቃሉ።",
+              name: "ኤደን",
+              title: "አስጠኚ",
+            },
+          ],
+        },
+      },
+      benefits: {
+        title: "ከልጄን አደራ አስጠኚ አገናኝ ድርጅት",
+        subtitle: "ጋር መስራት ለምን ይጠቅማል?",
+        cards: [
+          {
+            title: "ታማኝ እና ሙሉ ብቃት ያላቸው አስጠኚዎች ያገኛሉ",
+            body: "ታማኝነት፣ ብቃት እና ተጠያቂነት ያላቸዉን ከተለያዩ ዩኒቨርሲቲዎች የተመረቁ እና በሙያቸው ብቁነት ያላቸው አስጠኚዎችን ያገኛሉ።",
+          },
+          {
+            title: "ለልዩ ፈተናዎች ዝግጅት",
+            body: "ለብሔራዊ፣ ለዩኒቨርሲቲ መግቢያ እና ለክፍል ፈተናዎች ተማሪዎቻች በቀላሉ እንዲዘጋጁ እናደርጋለን።",
+          },
+          {
+            title: "በአዲስ አበባ በሁሉም ክፍለ ከተሞች እንገኛለን",
+            body: "ቤት–ለ–ቤት እና Online አገልግሎት በሁሉም የአዲስ አበባ ክፍለ ከተሞች እንገኛለን።",
+          },
+          {
+            title: "ከፍተኛ ጥራት በተመጣጣኝ ዋጋ",
+            body: "ምርጥ አስጠኚዎችን ተመጣጣኝ ዋጋ ከእኛ ያገኛሉ።",
+          },
+          {
+            title: "የስራ ማስታወቂያዎች",
+            body: "በተለያዩ የሙያ መስኮች የስራ ማስታወቂያዎች እናወጣለን።",
+          },
+          {
+            title: "ከወላጆች ጋር ግልጽ ግንኙነት",
+            body: "ምን እየተማረ እንዳለ፣ የት እንደደረሰ ግልጽ ውይይት ከወላጆች ጋር ይደረጋል።",
+          },
+        ],
       },
       approach: {
         title: "የእኛ የትምህርት እና የማስተማር",
@@ -151,6 +245,9 @@ export const dictionaries = {
         "ደህንነት ሁሉግዜ የባዮመዲካል ኢንጅነር እና ኢንተርፕረነር ናቸው። ሳይንሳዊ ጥራትን ከተግባራዊ እርምጃ ጋር በማቀላቀል የተማሪ መማር ስርዓቶችን ይንደፍናሉ። ዓላማዋ ቤተሰቦች ታማኝ አስጠኚዎችን በቀላሉ እንዲያገኙ እና ውጤት እንዲያዩ ነው።",
       name: "ደህንነት ሁሉግዜ — መስራች",
       role: "Biomedical Engineer · Entrepreneur",
+      impactTitle: "ተፅዕኖ እና ስኬቶች",
+      impactBody:
+        "ከተመሰረተ ጀምሮ 2000+ ቤተሰቦችን እንደገና እንዲተማሩ ረዳን፣ ተማሪዎችን ከተመረጡ አስጠኚዎች ጋር አገናኝተን የትምህርት ምክር በተለይ በግል ሁኔታ ሰጠን። ይህ በክፍል ውጤት፣ በትምህርት እምነት እና በማስተማር ግንዛቤ ግልጽ ልማት አመጣ። በተጨማሪም ለብዙ ባለሙያ አስጠኚዎች የስራ እድል ፈጥረናል።",
     },
     howItWorksPage: {
       title: "እንዴት እንሰራ",
@@ -224,6 +321,14 @@ export const dictionaries = {
           body: "የተማሪውን ውጤት እንገምግማለን፣ ካስፈለገ አስጠኚ መቀየር ወይም እቅድ ማሻሻል እናደርጋለን። ግባችን አንድ ነው — ውጤት።",
         },
       ],
+    },
+    coverageMap: {
+      title: "አገልግሎት የምንሰጥባቸው የአዲስ አበባ ክፍለ-ከተሞች",
+      subtitle: "በከተማዋ ሁሉ የቤት-ለ-ቤት እና የመስመር ላይ አገልግሎት እንሰጣለን።",
+      subcityTotalLabel: "ጠቅላላ ተሳትፎ (ክፍለ ከተሞች)",
+      subcityCountLabel: "ክፍለ ከተሞች",
+      placesLabel: "ቦታዎች",
+      placesListTitle: "የቦታ ዝርዝር (20+)",
     },
   },
   en: {
@@ -317,6 +422,100 @@ export const dictionaries = {
         parentsSubtitle: "What parents say",
         tutorsTitle: "Tutors' Testimonials",
         tutorsSubtitle: "What tutors say",
+        parents: {
+          items: [
+            {
+              id: "parent-1",
+              content:
+                "My child’s grades were low in several subjects. After working with Lijen Adera, the results improved within a short time.",
+              name: "Rahel",
+              title: "Parent",
+            },
+            {
+              id: "parent-2",
+              content:
+                "Thank you Lijen Adera. The tutor you matched was kind and supportive with my child. We are grateful.",
+              name: "Samrawit",
+              title: "Parent",
+            },
+            {
+              id: "parent-3",
+              content:
+                "We are very happy. The tutor was responsible, humble, and had excellent manners. Thank you.",
+              name: "Dinkinesh",
+              title: "Parent",
+            },
+            {
+              id: "parent-4",
+              content:
+                "We found an excellent tutor through Lijen Adera, and my child’s class results improved significantly.",
+              name: "Solomon",
+              title: "Parent",
+            },
+          ],
+        },
+        tutors: {
+          items: [
+            {
+              id: "tutor-1",
+              content:
+                "I appreciate the agency’s honesty. When the match didn’t work out, they refunded the commission in full.",
+              name: "Tayenit",
+              title: "Tutor",
+            },
+            {
+              id: "tutor-2",
+              content:
+                "Lijen Adera is a reliable and supportive tutoring agency. Communication is clear and respectful.",
+              name: "Netsanet",
+              title: "Tutor",
+            },
+            {
+              id: "tutor-3",
+              content:
+                "The team is professional and matches tutors with students thoughtfully. Keep it up.",
+              name: "Belayhun",
+              title: "Tutor",
+            },
+            {
+              id: "tutor-4",
+              content:
+                "Working with Lijen Adera has been a great experience. The team is helpful and values quality teaching.",
+              name: "Eden",
+              title: "Tutor",
+            },
+          ],
+        },
+      },
+      benefits: {
+        title: "Why work with",
+        subtitle: "Lijen Adera Tutor Matching?",
+        cards: [
+          {
+            title: "Access trusted, qualified tutors",
+            body: "We connect you with reliable, skilled tutors from diverse universities and professional backgrounds.",
+          },
+          {
+            title: "Exam preparation support",
+            body: "We help students prepare for national, university entrance, and class exams with confidence.",
+          },
+          {
+            title: "Coverage across Addis Ababa",
+            body: "Home-to-home and online services are available across all sub-cities.",
+          },
+          {
+            title: "High quality at fair pricing",
+            body: "Get excellent tutoring at an affordable cost.",
+          },
+          {
+            title: "Job announcements",
+            body: "We publish job opportunities across various professional fields.",
+          },
+          {
+            title: "Transparent parent communication",
+            body: "We keep parents informed with clear, ongoing updates on learning progress.",
+          },
+        ],
       },
       approach: {
         title: "Our Teaching and Learning",
@@ -376,6 +575,9 @@ export const dictionaries = {
         "Dehininet Huligzie is a Biomedical Engineer and Entrepreneur. She blends scientific rigor with practical compassion to design learning solutions that are reliable, personal, and measurable. Her vision is a city where families can easily find committed tutors and see steady results.",
       name: "Dehininet Huligzie — Founder",
       role: "Biomedical Engineer · Entrepreneur",
+      impactTitle: "Impact & Achievements",
+      impactBody:
+        "Since founding, we have supported 2000+ families by connecting students with carefully selected tutors and tailored academic guidance. Many students have shown clear improvement in performance, confidence, and grades. We have also created flexible job opportunities for skilled tutors.",
     },
     howItWorksPage: {
       title: "How We Work",
@@ -449,6 +651,14 @@ export const dictionaries = {
           body: "We review progress and adjust the plan or tutor if needed. Our goal is results.",
         },
       ],
+    },
+    coverageMap: {
+      title: "Addis Ababa sub-cities we serve",
+      subtitle: "We offer home-to-home and online services across the city.",
+      subcityTotalLabel: "Total coverage (sub-cities)",
+      subcityCountLabel: "Sub-cities",
+      placesLabel: "Places",
+      placesListTitle: "Place list (20+)",
     },
   },
 };

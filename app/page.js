@@ -6,7 +6,6 @@ import Technologies from "./components/Technologies";
 import Process from "./components/Process";
 import Image from "next/image";
 import TutorCoverageMap from "./components/TutorCoverageMap";
-import { useLanguage } from "./components/LanguageProvider";
 import rocket from "../public/rocket.jpg";
 import codeReview from "../public/code-review.jpg";
 import quality from "../public/quality.jpg";
@@ -16,10 +15,6 @@ import developing from "../public/developing.jpg";
 import aboutImage from "../public/about.jpg"
 
 export default function Home() {
-  const { t } = useLanguage();
-  const approachCards = t("home.approach.cards") || [];
-  const getApproachCard = (index) => approachCards[index] || {};
-
   return (
     <div className="w-full mx-auto px-4">
       <div className="text-white">
@@ -40,21 +35,24 @@ export default function Home() {
           <div className="w-full md:w-[48%] order-2 md:order-1">
             <div className="animate-appearup">
               <h1 className="text-xl md:text-2xl lg:text-4xl font-extrabold">
-                {t("home.hero.title1")} {" "}
+                ልምድ ያላቸው አስጠኚዎችን ትፈልጋላችሁ? {" "}
                 <span className="font-semibold bg-gradient-to-r from-[#149895] to-[#1F73B5] bg-clip-text text-transparent">
-                  {t("home.hero.title1Accent")}
+                  
+
                 </span>{" "}
-               {t("home.hero.title1Suffix")}
+              
               </h1>
 
               <h1 className="font-extrabold text-xl md:3xl lg:text-5xl mb-8">
-                {t("home.hero.title2")}{" "}
+                ከልጄን አደራ አስጠኚ አገናኚ ድርጅት {" "}
                 <span className="bg-gradient-to-r from-[#18BDBB] to-[#1F73B5] bg-clip-text text-transparent">
-                  {t("home.hero.title2Accent")}
+                  ብቁ እና የተመረጡ አስጠኚዎችን በፍጥነት ያገኛሉ:: 
                 </span>
               </h1>
               <p className="text-white mb-12 font-semibold">
-                {t("home.hero.description")}
+                በታማኝነት፣ በብቃት እና በተጠያቂነት ልጅዎን በአደራ የሚያስተማሩ ከተለያዩ 
+                ዩኒቨርሲቲዎች የተመረቁ እና በሙያቸው ብቁነት ያላቸው አስጠኚዎችን
+                 ለልጆችና ለተማሪዎች  እንመድባለን።
               </p>
 
             </div>
@@ -66,7 +64,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-6 py-4 md:px-8 md:py-5 rounded-lg shadow-lg shadow-[#149895]/35 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-[#1F73B5]/40 transition-transform transition-shadow duration-200 w-full text-center"
               >
-                {t("home.hero.ctaTutor")}
+                ለአስጠኚዎች ይመዝገቡ፤
               </a>
               <a
                 href="https://forms.gle/MoWnertcdxqs7bej6"
@@ -74,7 +72,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="text-white bg-gradient-to-r from-[#1F73B5] via-[#18BDBB] to-[#6AD6F0] px-6 py-4 md:px-8 md:py-5 rounded-lg shadow-lg shadow-[#1F73B5]/35 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-[#18BDBB]/40 transition-transform transition-shadow duration-200 w-full text-center"
               >
-                {t("home.hero.ctaFamily")}
+                ለቤተሰብ ይመዝገቡ፤
               </a>
             </div>
           </div>
@@ -87,8 +85,8 @@ export default function Home() {
         className="flex flex-col mt-36 md:mt-16 mb-16 items-center"
       >
         <hr className="bg-[#149895] h-1 w-16 my-6" />
-        <p className="text-2xl">{t("home.services.title")}</p>
-        <p className="text-2xl font-semibold">{t("home.services.subtitle")}</p>
+        <p className="text-2xl">our</p>
+        <p className="text-2xl font-semibold">services</p>
       </div>
       <div>
         <CardSlider />
@@ -97,20 +95,38 @@ export default function Home() {
       <div id="about-us" className="flex justify-around items-center mt-24">
         <div className="w-full md:w-2/5">
           <hr className="bg-[#149895] h-1 w-16 my-6" />
-          <h3 className="text-3xl mb-12 font-medium">
-            {t("home.about.titleLead")} {" "}
-            <span className="font-semibold">{t("home.about.titleStrong")}</span>
-          </h3>
+          <h4 className="text-3xl mb-12 font-medium">
+             ልጄን አደራ  {" "}
+            <span className="font-semibold">አስጠኚ አገናኚ ድርጅት</span>
+          </h4>
           <p className="text-[#898CA9] mb-12">
-            {t("home.about.body")}
+          በ2015 ዓ.ም የተመሰረተ ሲሆን፣ በተለያዩ የዲግሪ እና የማስተርስ 
+          {" "}
+            <span className="bg-gradient-to-r from-[#149895] to-[#1F73B5] bg-clip-text text-transparent">
+             ምሩቃን የሚመራ የትምህርት እና የሙያ አገልግሎት ሰጪ ድርጅት ነው።
+            </span>{" "}
+           ድርጅታችን በሚሰጣቸው አገልግሎቶች ወላጆች፣ ተማሪዎች፣ አስጠኚዎች እና የድርጅታችን ሰራተኞች በጋራ 
+           በመተባበር የዘመናዊ የትምህርት አቀራረብን በመረዳት የተሻለ ውጤት ለማምጣት እየሰሩ ይገኛሉ።
+            ዛሬ ላይ ተማሪዎችን በማጠናከር፣ የነገ ፋኖሳቸውን እንዲያበሩ እንረዳለን።
+
+የምንሰጣቸው አገልግሎቶች ዋና ትኩረት ያደረጉት፣ ልምድ ያላቸው፣ የሰለጠኑ እና ከተለያዩ ዩኒቨርሲቲዎች 
+የተመረቁ መምህራንን ለአስጠኚ የሚፈልጉ ተማሪዎች በቤት-ለ-ቤት ወይም (Online) እንዲያገኙ ማድረግ ነው።
+
+ከአስጠኚ አገልግሎት በተጨማሪ፣ በድርጅታችን ስር በተለያዩ የሙያ መስኮች የተማሩ እና ልምድ 
+ያላቸው ባለሙያዎች ስለሚገኙ፣ በማንኛውም የሙያ መስክ ሰራተኛ ሲፈልጉ እኛን ማነጋገር ይችላሉ። 
+ከእኛ ጋር ብዙ የተለያዩ ባለሙያዎች ይገኛሉ።
+
+በተጨማሪም፣ ትምህርትን መሠረት ያደረጉ 
+<span className="font-semibold">{" "}ማስታወቂያዎችን {" "}</span>
+ እና የትምህርት ግንዛቤ የሚያጎሉ የሚዲያ ይዘቶችን እንዘጋጃለን።
           </p>
           <a
-            href="https://t.me/DHB1221"
+            href="https://t.me/LijenAderaTutor"
             target="_blank"
             rel="noreferrer"
             className="text-[#1F73B5]"
           >
-            {t("home.about.moreInfo")} <GoArrowRight className="inline" />
+            ተጨማሪ መረጃዎችን ይመልከቱ <GoArrowRight className="inline" />
           </a>
         </div>
         <Image src={aboutImage} alt="about-image" className="w-2/5 hidden md:block rounded-md" />
@@ -127,7 +143,7 @@ export default function Home() {
                 <div className="relative h-48 w-48 rounded-full overflow-hidden ring-4 ring-white/80 shadow-lg">
                   <Image
                     src="/founder.JPG"
-                    alt="Founder Dehininet Huligzie"
+                    alt="Founder Dehninet Hulgizey"
                     fill
                     sizes="192px"
                     className="object-cover object-[50%_10%]"
@@ -137,14 +153,15 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-2xl font-semibold text-[#149895] mb-2">{t("home.founder.label")}</p>
-                <h3 className="text-3xl font-medium mb-2">{t("home.founder.name")}</h3>
-                <p className="text-[#898CA9] mb-4">{t("home.founder.role")}</p>
+                <p className="text-2xl font-semibold text-[#149895] mb-2">Founder</p>
+                <h3 className="text-3xl font-medium mb-2">Dehninet Hulgizey</h3>
+                <p className="text-[#898CA9] mb-4">Biomedical Engineer · Entrepreneur</p>
                 <p className="text-[#898CA9] leading-relaxed">
-                  {t("home.founder.bio")}
+                 ልጄን አደራን የጀመርኩት ፣ ወላጆች ታማኝ እና ብቁ አስጠኚ ማግኘት ምን ያህል ከባድ እንደሆነ በቅርብ ስለማየው ነው።
+                  ብዙ ጊዜ የትምህርት ችግር ከእውቀት እጥረት ሳይሆን፣ ከትክክለኛ መመሪያ እና ከታማኝ አስጠኚ እጥረት እንደሚመጣ ተገነዘብኩ፡፡
                 </p>
                 <a href="/founder" className="inline-block mt-4 text-[#1F73B5] hover:underline">
-                  {t("home.founder.learnMore")}
+                  Read more →
                 </a>
               </div>
             </div>
@@ -160,22 +177,22 @@ export default function Home() {
       <div className="w-full my-20"></div>
       <div className="flex flex-col items-center my-16">
         <hr className="bg-[#149895] h-1 w-16 my-6" />
-        <p className="text-2xl">{t("home.testimonials.parentsTitle")}</p>
-        <p className="text-2xl font-semibold">{t("home.testimonials.parentsSubtitle")}</p>
+        <p className="text-2xl">የወላጆች ምስክርነት</p>
+        <p className="text-2xl font-semibold">Parents' Testimonials</p>
       </div>
       <TestimonialsParents />
 
       <div className="flex flex-col items-center my-16">
         <hr className="bg-[#149895] h-1 w-16 my-6" />
-        <p className="text-2xl">{t("home.testimonials.tutorsTitle")}</p>
-        <p className="text-2xl font-semibold">{t("home.testimonials.tutorsSubtitle")}</p>
+        <p className="text-2xl">የአስጠኚዎች ምስክርነት</p>
+        <p className="text-2xl font-semibold">Tutors' Testimonials</p>
       </div>
       <TestimonialsTutors />
 
       <div id="who-we-are" className="flex flex-col items-center my-16">
         <hr className="bg-[#149895] h-1 w-16 my-6" />
-        <p className="text-2xl">{t("home.approach.title")}</p>
-        <p className="text-2xl font-semibold">{t("home.approach.subtitle")}</p>
+        <p className="text-2xl">ከልጄን አደራ አስጠኚ አገናኝ ድርጅት </p>
+        <p className="text-2xl font-semibold"> ጋር መስራት ለምን ይጠቅማል?</p>
       </div>
 
       <div className="flex flex-wrap justify-between">
@@ -189,10 +206,11 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-              {getApproachCard(0).title}
+             ታማኝ እና ሙሉ ብቃት ያላቸው አስጠኚዎች ያገኛሉ
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(0).body}
+              ታማኝነት፣ ብቃት እና ተጠያቂነት ያላቸዉን
+               ከተለያዩ ዩኒቨርሲቲዎች የተመረቁ እና በሙያቸው ብቁነት ያላቸው አስጠኚዎችን ያገኛሉ፡፡
             </p>
           </div>
         </div>
@@ -207,10 +225,10 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-              {getApproachCard(1).title}
+              ለልዩ ፈተናዎች ዝግጅት
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(1).body}
+             ለብሔራዊ፣ ለዩኒቨርሲቲ መግቢያ እና ለክፍል ፈተናዎች  ተማሪዎቻች በቀላሉ እንዲዘጋጁ እናደርጋለን።
             </p>
           </div>
         </div>
@@ -224,10 +242,10 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-              {getApproachCard(2).title}
+              በአዲስ አበባ በሁሉም ክፍለ ከተሞች እንገኛለን
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(2).body}
+             ቤት–ለ–ቤት እና Online አገልግሎት በሁሉም የአዲስ አበባ ክፍለ ከተሞች እንገኛለን፡፡
             </p>
           </div>
         </div>
@@ -242,10 +260,10 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-             {getApproachCard(3).title}
+             ከፍተኛ ጥራት በተመጣጣኝ ዋጋ
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(3).body}
+              ምርጥ አስጠኚዎችን  ተመጣጣኝ ዋጋ ከእኛ ያገኛሉ።
             </p>
           </div>
         </div>
@@ -259,10 +277,10 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-              {getApproachCard(4).title}
+              የስራ ማስታወቂያዎች
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(4).body}
+              በተለያዩ የሙያ መስኮች  የስራ ማስታወቂያዎች እናወጣለን።
             </p>
           </div>
         </div>
@@ -276,10 +294,10 @@ export default function Home() {
           />
           <div>
             <p className="text-center sm:text-left font-semibold mb-3">
-              {getApproachCard(5).title}
+              ከወላጆች ጋር ግልጽ ግንኙነት
             </p>
             <p className="text-[#4A5568]">
-              {getApproachCard(5).body}
+              ምን እየተማረ እንዳለ፣ የት እንደደረሰ ፡ ግልጽ ዉይይት ከወላጆች ጋር ይደረጋል  ።
             </p>
           </div>
         </div>
@@ -289,9 +307,9 @@ export default function Home() {
 
       <div id="how-it-works" className="flex flex-col items-center my-16">
         <hr className="bg-[#149895] h-1 w-16 my-6" />
-        <p className="text-2xl">{t("home.howItWorks.title")}</p>
+        <p className="text-2xl">የልጄን አደራ አስጠኚ አገናኝ ድርጅት</p>
         <p className="text-2xl font-semibold">
-          {t("home.howItWorks.subtitle")}
+           የአሰራር ሂደት 
         </p>
       </div>
 
@@ -299,7 +317,8 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-around items-center bg-gradient-to-r from-[#E6F7F6] to-[#E7F0FA] h-72 rounded-[20px]">
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center md:text-left w-[90%] md:w-2/5 lg:w-2/5 lg:min-w-0">
-         {t("home.cta.text")}
+         በልጄን አደራ ድርጅት ስራ ለማግኘት ወይም ለልጆችዎ አስጠኚ ከፈለጉ አሁንኑ ይመዝገቡ
+         ።
         </p>
         <a
           href="https://t.me/DHB1221"
@@ -308,7 +327,7 @@ export default function Home() {
           className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-3 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-md mt-0 lg:mt-0 shadow-lg shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition-shadow duration-200"
         >
           <span className="text-base sm:text-lg font-bold">
-            {t("home.cta.contact")}
+            Contact us
           </span>
         </a>
       </div>

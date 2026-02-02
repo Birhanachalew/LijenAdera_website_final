@@ -1,19 +1,21 @@
+"use client";
+
 import React from "react";
 
 // Addis Ababa coverage map with circular count badges and Amharic labels.
 // Responsive, no Maps API key required (uses embed as a background).
 
 const defaultMarkers = [
-  { am: "አራዳ", en: "Arada", count: 25, top: 48, left: 48 },
-  { am: "አዲስ ከተማ", en: "Addis Ketema", count: 30, top: 46, left: 40 },
-  { am: "ልደታ", en: "Lideta", count: 15, top: 52, left: 44 },
-  { am: "ክርኮስ", en: "Kirkos", count: 20, top: 55, left: 52 },
-  { am: "ጉለሌ", en: "Gullele", count: 12, top: 36, left: 44 },
-  { am: "የካ", en: "Yeka", count: 22, top: 42, left: 64 },
-  { am: "ቦሌ", en: "Bole", count: 35, top: 58, left: 66 },
-  { am: "ንፋስ ስልክ ላፍቶ", en: "Nifas Silk-Lafto", count: 18, top: 66, left: 48 },
-  { am: "ኮልፌ ቀራኒዮ", en: "Kolfe Keranio", count: 14, top: 60, left: 36 },
-  { am: "አቃኪ ቃሊቲ", en: "Akaki Kaliti", count: 16, top: 76, left: 56 },
+  { am: "አራዳ", en: "Arada", count: 260, top: 48, left: 48 },
+  { am: "አዲስ ከተማ", en: "Addis Ketema", count: 210, top: 46, left: 40 },
+  { am: "ልደታ", en: "Lideta", count: 190, top: 52, left: 44 },
+  { am: "ክርኮስ", en: "Kirkos", count: 230, top: 55, left: 52 },
+  { am: "ጉለሌ", en: "Gullele", count: 150, top: 36, left: 44 },
+  { am: "የካ", en: "Yeka", count: 180, top: 42, left: 64 },
+  { am: "ቦሌ", en: "Bole", count: 300, top: 58, left: 66 },
+  { am: "ንፋስ ስልክ ላፍቶ", en: "Nifas Silk-Lafto", count: 160, top: 66, left: 48 },
+  { am: "ኮልፌ ቀራኒዮ", en: "Kolfe Keranio", count: 140, top: 60, left: 36 },
+  { am: "አቃኪ ቃሊቲ", en: "Akaki Kaliti", count: 180, top: 76, left: 56 },
 ];
 
 function badgeSize(count) {
@@ -33,29 +35,29 @@ const formatCount = (count) => `${count}+`;
 export default function TutorCoverageMap({ markers = defaultMarkers }) {
   // Specific places (POIs) requested
   const poiMarkers = [
-    { am: "ቦሌ", en: "Bole", count: 28, top: 57, left: 66, color: "bg-orange-500" },
-    { am: "ሰሚት", en: "Summit", count: 16, top: 39, left: 72, color: "bg-teal-500" },
-    { am: "አያት", en: "Ayat", count: 18, top: 34, left: 74, color: "bg-emerald-500" },
-    { am: "ኮተቤ", en: "Kotebe", count: 14, top: 41, left: 70, color: "bg-cyan-500" },
-    { am: "አራት ኪሎ", en: "Arat Kilo (4 Kilo)", count: 12, top: 48, left: 49, color: "bg-lime-500" },
-    { am: "ስድስት ኪሎ", en: "Sidist Kilo (6 Kilo)", count: 15, top: 45, left: 52, color: "bg-green-500" },
-    { am: "ሳርቤት", en: "Sarbet", count: 13, top: 65, left: 52, color: "bg-rose-500" },
-    { am: "መገናኛ", en: "Megenagna", count: 17, top: 47, left: 62, color: "bg-sky-500" },
-    { am: "ፒያሳ", en: "Piassa", count: 19, top: 49, left: 46, color: "bg-yellow-500" },
-    { am: "ሲ.ኤም.ሲ.", en: "CMC", count: 15, top: 43, left: 68, color: "bg-indigo-500" },
-    { am: "ጀሞ", en: "Jemo", count: 11, top: 70, left: 40, color: "bg-fuchsia-500" },
-    { am: "ለቡ", en: "Lebu", count: 10, top: 72, left: 44, color: "bg-purple-500" },
-    { am: "ገርጂ", en: "Gerji", count: 14, top: 61, left: 62, color: "bg-violet-500" },
-    { am: "22 ማዞሪያ", en: "22 Mazoria", count: 16, top: 54, left: 60, color: "bg-blue-500" },
-    { am: "ጉርድ ሾላ", en: "Gurd Shola", count: 13, top: 50, left: 68, color: "bg-cyan-600" },
-    { am: "ሀያ ሁለት", en: "Hayahulet", count: 15, top: 52, left: 58, color: "bg-teal-600" },
-    { am: "መክሲኮ", en: "Mexico", count: 18, top: 58, left: 46, color: "bg-amber-500" },
-    { am: "ካዛንቺስ", en: "Kazanchis", count: 12, top: 55, left: 50, color: "bg-pink-500" },
-    { am: "ጎፋ", en: "Gofa", count: 13, top: 62, left: 48, color: "bg-red-500" },
-    { am: "ጀግና ማዕከል", en: "Gotera", count: 11, top: 60, left: 54, color: "bg-emerald-600" },
-    { am: "ኦልድ ኤርፖርት", en: "Old Airport", count: 9, top: 64, left: 58, color: "bg-slate-600" },
-    { am: "ቦሌ ራዋንዳ", en: "Bole Rwanda", count: 14, top: 60, left: 66, color: "bg-orange-600" },
-    { am: "ቦሌ ሚካኤል", en: "Bole Michael", count: 12, top: 56, left: 64, color: "bg-orange-400" },
+    { am: "ቦሌ", en: "Bole", count: 84, top: 57, left: 66, color: "bg-orange-500" },
+    { am: "ሰሚት", en: "Summit", count: 67, top: 39, left: 72, color: "bg-teal-500" },
+    { am: "አያት", en: "Ayat", count: 73, top: 34, left: 74, color: "bg-emerald-500" },
+    { am: "ኮተቤ", en: "Kotebe", count: 59, top: 41, left: 70, color: "bg-cyan-500" },
+    { am: "አራት ኪሎ", en: "Arat Kilo (4 Kilo)", count: 55, top: 48, left: 49, color: "bg-lime-500" },
+    { am: "ስድስት ኪሎ", en: "Sidist Kilo (6 Kilo)", count: 62, top: 45, left: 52, color: "bg-green-500" },
+    { am: "ሳርቤት", en: "Sarbet", count: 60, top: 65, left: 52, color: "bg-rose-500" },
+    { am: "መገናኛ", en: "Megenagna", count: 71, top: 47, left: 62, color: "bg-sky-500" },
+    { am: "ፒያሳ", en: "Piassa", count: 69, top: 49, left: 46, color: "bg-yellow-500" },
+    { am: "ሲ.ኤም.ሲ.", en: "CMC", count: 63, top: 43, left: 68, color: "bg-indigo-500" },
+    { am: "ጀሞ", en: "Jemo", count: 52, top: 70, left: 40, color: "bg-fuchsia-500" },
+    { am: "ለቡ", en: "Lebu", count: 51, top: 72, left: 44, color: "bg-purple-500" },
+    { am: "ገርጂ", en: "Gerji", count: 64, top: 61, left: 62, color: "bg-violet-500" },
+    { am: "22 ማዞሪያ", en: "22 Mazoria", count: 58, top: 54, left: 60, color: "bg-blue-500" },
+    { am: "ጉርድ ሾላ", en: "Gurd Shola", count: 56, top: 50, left: 68, color: "bg-cyan-600" },
+    { am: "ሀያ ሁለት", en: "Hayahulet", count: 61, top: 52, left: 58, color: "bg-teal-600" },
+    { am: "መክሲኮ", en: "Mexico", count: 70, top: 58, left: 46, color: "bg-amber-500" },
+    { am: "ካዛንቺስ", en: "Kazanchis", count: 57, top: 55, left: 50, color: "bg-pink-500" },
+    { am: "ጎፋ", en: "Gofa", count: 53, top: 62, left: 48, color: "bg-red-500" },
+    { am: "ጀግና ማዕከል", en: "Gotera", count: 54, top: 60, left: 54, color: "bg-emerald-600" },
+    { am: "ኦልድ ኤርፖርት", en: "Old Airport", count: 50, top: 64, left: 58, color: "bg-slate-600" },
+    { am: "ቦሌ ራዋንዳ", en: "Bole Rwanda", count: 65, top: 60, left: 66, color: "bg-orange-600" },
+    { am: "ቦሌ ሚካኤል", en: "Bole Michael", count: 60, top: 56, left: 64, color: "bg-orange-400" },
   ];
 
   const total = markers.reduce((s, m) => s + m.count, 0);
@@ -65,9 +67,9 @@ export default function TutorCoverageMap({ markers = defaultMarkers }) {
     <section className="w-full my-16">
       <div className="flex flex-col items-center text-center mb-6">
         <hr className="bg-[#149895] h-1 w-16 my-4" />
-        <p className="text-2xl font-semibold">የማስተማር ክልሎቻችን (አዲስ አበባ)</p>
+        <p className="text-2xl font-semibold"> አገልግሎት የምንሰጥባቸው የአዲስ አበባ ክፍለ-ከተሞች</p>
         <p className="text-sm text-[#4A5568] max-w-3xl px-4 mt-2">
-          በአዲስ አበባ ውስጥ ያሉ ክፍለ ከተሞች ላይ የተመረጡ መረጃዎች። ቁጥሮቹ በቅርብ ጊዜ የተሰበሰቡ ናቸው እና ለማሳያ ዓላማ ብቻ ናቸው።
+          በከተማዋ ሁሉ የቤት-ለ-ቤት እና የመስመር ላይ አገልግሎት እንሰጣለን።
         </p>
       </div>
 

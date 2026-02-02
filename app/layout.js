@@ -1,11 +1,9 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Footer from './components/Footer'
-import NavbarWithCTAButton from './components/MainHeader'
-import { LanguageProvider } from './components/LanguageProvider'
-import { DEFAULT_LOCALE } from './lib/i18n'
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Footer from "./components/Footer";
+import NavbarWithCTAButton from "./components/MainHeader";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: 'Lijen adera',
@@ -14,10 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
+    <html lang="am" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google" content="notranslate" />
+        <meta name="translate" content="no" />
         <title>lijenadera</title>
         <meta name="description" content={metadata.description} />
         <link rel="icon" href="/logo.ico" />
@@ -38,13 +38,11 @@ export default function RootLayout({ children }) {
       <link rel="preload" href="kalkidan.svg" />
       
       <link rel="preload" href="/images/hero.jpg" />
-      <body className={inter.className}>
-        <LanguageProvider initialLocale={DEFAULT_LOCALE}>
-          <NavbarWithCTAButton />
-          {children}
-          <Footer />
-        </LanguageProvider>
+      <body className={inter.className} translate="no">
+        <NavbarWithCTAButton />
+        {children}
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

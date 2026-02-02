@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { LiaAngleRightSolid } from "react-icons/lia";
-import { useLanguage } from "../components/LanguageProvider";
 
 const jobs = [
   {
@@ -108,7 +107,6 @@ const jobs = [
 ];
 
 const Page = () => {
-  const { t } = useLanguage();
   const [jobPosts, setJobPosts] = useState(jobs);
   const now = Date.now();
 
@@ -133,8 +131,11 @@ const Page = () => {
     <div className="w-[92%] mx-auto pb-16">
       <div className="flex flex-col my-12 text-center items-center">
         <hr className="bg-[#149895] h-1 w-16 my-4" />
-        <p className="text-2xl font-semibold">{t("portfolio.title")}</p>
-        <p className="text-[#4A5568] max-w-3xl mt-2">{t("portfolio.description")}</p>
+        <p className="text-2xl font-semibold">የስራ ማስታወቂያዎች</p>
+        <p className="text-[#4A5568] max-w-3xl mt-2">
+          በልጄን አደራ ድርጅት የአስጠኚ ስራ እየፈለጉ ነዎት? እዚህ
+           ዝርዝር ስራዎችን ይመልከቱ እና ያመልክቱ።
+        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -150,13 +151,13 @@ const Page = () => {
                 </span>
               ) : (
                 <span className="text-sm font-semibold text-[#149895] bg-[#E6F7F6] px-3 py-1 rounded-full">
-                  {t("portfolio.tagTelegram")}
+                  Telegram
                 </span>
               )}
               <div className="flex items-center gap-2">
                 {job.postedAt && now - new Date(job.postedAt).getTime() < 24 * 60 * 60 * 1000 && (
                   <span className="text-xs font-semibold text-white bg-[#1F73B5] px-2 py-1 rounded-full">
-                    {t("portfolio.new")}
+                    አዲስ
                   </span>
                 )}
                 {job.location && <span className="text-sm text-[#4A5568]">{job.location}</span>}
@@ -165,7 +166,7 @@ const Page = () => {
             <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
             {job.level && (
               <p className="text-sm text-[#4A5568] mb-3">
-                {t("portfolio.level")}: {job.level}
+                ደረጃ: {job.level}
               </p>
             )}
             <p className="text-[#2D3748] mb-2 leading-relaxed">{job.summary}</p>
@@ -179,7 +180,7 @@ const Page = () => {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
               >
-                {t("portfolio.apply")} <LiaAngleRightSolid />
+                Apply <LiaAngleRightSolid />
               </a>
             </div>
           </div>
@@ -187,7 +188,9 @@ const Page = () => {
       </div>
 
       <div className="mt-10 flex flex-col items-center gap-3 text-center">
-        <p className="text-[#2D3748] font-medium">{t("portfolio.moreTitle")}</p>
+        <p className="text-[#2D3748] font-medium">
+          ተጨማሪ የሥራ ማስታወቂያዎችን ለማየት ፦
+        </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="https://t.me/DHB1221"
@@ -195,7 +198,7 @@ const Page = () => {
             rel="noreferrer"
             className="text-white bg-gradient-to-r from-[#149895] to-[#1F73B5] px-4 py-2 rounded-md shadow-sm shadow-[#149895]/30 hover:shadow-[#1F73B5]/40"
           >
-            {t("portfolio.telegramQuestions")}
+            Telegram: ጥያቄዎች
           </a>
           <a
             href="https://t.me/LijenAderaTutor"
@@ -203,7 +206,7 @@ const Page = () => {
             rel="noreferrer"
             className="text-[#1F73B5] font-semibold underline"
           >
-            {t("portfolio.moreChannel")}
+            ተጨማሪ የስራ ማስታወቂያ ቻናል
           </a>
         </div>
         <a
@@ -212,10 +215,10 @@ const Page = () => {
           rel="noreferrer"
           className="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#149895] via-[#18BDBB] to-[#1F73B5] text-white font-semibold shadow-lg shadow-[#149895]/30 hover:shadow-[#1F73B5]/40 transition transform hover:-translate-y-0.5 hover:scale-[1.02] animate-pulse"
         >
-          {t("portfolio.moreChannel")}
+          ተጨማሪ የስራ ማስታወቂያ channel
         </a>
         <div className="flex flex-wrap justify-center gap-2 text-sm text-[#4A5568]">
-          <span>{t("portfolio.pinnedRules")}</span>
+          <span>መመሪያዎችን ይከተሉ</span>
           <span>•</span>
           <a
             href="https://www.tiktok.com/@user6033223266513?_t=ZM-8yTzRtZ1zpl&_r=1"
@@ -223,7 +226,7 @@ const Page = () => {
             rel="noreferrer"
             className="text-[#1F73B5] underline"
           >
-            {t("portfolio.followTiktok")}
+            TikTok account Follow ያድርጉ
           </a>
         </div>
       </div>

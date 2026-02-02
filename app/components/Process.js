@@ -1,11 +1,32 @@
-"use client";
-
 import React from "react";
-import { useLanguage } from "./LanguageProvider";
 
 const Process = () => {
-  const { t } = useLanguage();
-  const steps = t("process.steps") || [];
+  const steps = [
+    {
+      title: "መመዝገብ (Register)",
+      body: "ወላጆች፣ ተማሪዎች ወይም አስጠኚዎች በgoogle form ፡ Telegram ወይም በስልክ እንመዘግባለን፡፡",
+    },
+    {
+      title: "ፍላጎት እና ደረጃ መለየት (Assess Needs & Level)",
+      body: "የተማሪውን ዕድሜ፣ የትምህርት ደረጃ፣  የመማሪያ ፍላጎትና መንገድ (ቤት ለቤት ወይም Online) በጥልቅ እንመርመራለን። ",
+    },
+    {
+      title: "ተመጣጣኝ አስጠኚ መምረጥ (Select the Right Tutor)",
+      body: "በትምህርት ደረጃና በፍላጎት መሠረት የተረጋገጠ እና ታማኝ ልምድ ያለው አስጠኚ እንመርጣለን። ",
+    },
+    {
+      title: "የትምህርት እቅድ ማዘጋጀት (Create a Personalized Learning Plan)",
+      body: "ለተማሪው ብቻ የተስማማ የመማሪያ እቅድ እንዘጋጃለን፣ ይህም የደከሙበትን የትምህርት አይነቶች ለማሻሻልና ጠንካራ የሆኑባቸዉን የትምህርት አይነቶች ለማበረታታት ይረዳል። ",
+    },
+    {
+      title: "ትምህርት መጀመር እና ክትትል (Start & Monitor Progress)",
+      body: "ትምህርቱ በተስማሚ ጊዜ ይጀምራል፣ እኛም በቀጥታ ሂደቱን እንከታተላለን፣ ከወላጆች ጋር ተደጋጋሚ ግንኙነት እናደርጋለን። ",
+    },
+    {
+      title: "ግምገማ እና ቀጣይ ማሻሻያ (Evaluate & Adjust)",
+      body: "የተማሪውን ውጤት እንገምግማለን፣ ካስፈለገ አስጠኚ እንቀይራለን ወይም እቅድ ማሻሻያ እናደርጋለን።",
+    },
+  ];
 
   return (
     <div className="flex justify-around flex-wrap mb-24">

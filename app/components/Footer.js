@@ -20,7 +20,7 @@ const Footer = () => {
             <Image src={bellxLogo} alt="Company Logo" className="w-24" />
             <p className="text-lg mb-3">ልጀን አደራ ቤት ለ ቤት አስጠኚ አገናኚ ድርጅት</p>
             <p className="text-sm">
-              ልጄን አደራ በእርግጠኝነት እና ባለሙያነት የትምህርት ጉዞውን ከእጅዎ ጋር ይመራል።
+              ታማኝነት፣ ብቃት እና ተጠያቂነት መለያችን ነዉ፡፡
             </p>
           </div>
 
@@ -30,12 +30,12 @@ const Footer = () => {
             <div className="flex justify-center md:block">
             <ul className="text-sm  grid grid-cols-3 justify-between md:flex md:flex-col md:gap-y-1">
               <li>
-                <a href="/about" className="hover:text-[#1F73B5] hover:underline">
+                <a href="/#about-us" className="hover:text-[#1F73B5] hover:underline">
                   About us
                 </a>
               </li>
               <li>
-                <a href="/services" className="hover:text-[#1F73B5] hover:underline">
+                <a href="/#services" className="hover:text-[#1F73B5] hover:underline">
                   Services
                 </a>
               </li>
@@ -64,8 +64,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact us</h3>
             <p className="text-sm mb-4 max-w-md">
-              ጥያቄ አለዎት ወይስ በአገልግሎታችን ፍላጎት አለዎት? ዛሬ ያግኙን እና ውይይትን እንጀምር።
-                እንረዳዎታለን።
+              በልጄን አደራ ድርጅት ስራ ለማግኘት ወይም ለልጆችዎ አስጠኚ ከፈለጉ አሁንኑ ይደውሉ።
+
             </p>
             <p className="text-sm">Phone: ☎️ 0988469108 |
  0953517272</p>
