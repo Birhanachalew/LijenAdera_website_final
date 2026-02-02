@@ -69,7 +69,7 @@ export default function TutorCoverageMap({ markers = defaultMarkers }) {
         <hr className="bg-[#149895] h-1 w-16 my-4" />
         <p className="text-2xl font-semibold"> አገልግሎት የምንሰጥባቸው የአዲስ አበባ ክፍለ-ከተሞች</p>
         <p className="text-sm text-[#4A5568] max-w-3xl px-4 mt-2">
-          በከተማዋ ሁሉ የቤት-ለ-ቤት እና የመስመር ላይ አገልግሎት እንሰጣለን።
+          
         </p>
       </div>
 
