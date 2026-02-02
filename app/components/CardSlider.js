@@ -75,7 +75,7 @@ export default function CardSlider() {
           4. አስጠኚ መቅጠር እና ማገናኘት (For Tutors)
         </h3>
         <p className="text-[#2D3748] mb-12">
-          ተጠያቂ አስተማሪ ላኩልን፤ ልጃችን ውጤቱን እንዲያሻሽል በጣም አግዟል።
+          
         </p>
       </div>
       <div className="w-[22rem] shadow-md px-4 pt-8 border border-[#CDEDEA] rounded-md mx-4 my-4 inset-0 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l hover:from-[#149895] hover:to-transparent">
