@@ -58,7 +58,7 @@ She saw that creating a transparent, reliable,
               <p className="text-lg md:text-xl font-semibold text-gray-900">
                 Impact & Achievements
               </p>
-              <p className="text-xs md:text-sm text-[#4A5568]">
+              <p className="text-base italic leading-relaxed text-[#898CA9]">
                 Since its founding, the company has supported 2000+ families,
                  connecting students with carefully selected tutors
                   and providing strategic academic guidance tailored to
